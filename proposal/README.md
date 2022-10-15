@@ -3,9 +3,9 @@ Group 6
 
 Group Members: Akshit Sharma, Sarthak Dhomne, Mano Narasimha
 
-System Requirements:
+# System Requirements:
 
-- We will focus on the following set of requirements while designing the parking lot:
+We will focus on the following set of requirements while designing the parking lot:
 
 - The parking lot should have multiple floors where customers can park their cars.
 
