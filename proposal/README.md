@@ -1,9 +1,9 @@
 # Parking Management System
 Group 6
 
-Group Members: Akshit Sharma, Sarthak Dhomne, Mano Narasimha
+Group Members: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
 
-Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Mano Narasimha
+Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
 
 # System Requirements:
 
