@@ -3,6 +3,8 @@ Group 6
 
 Group Members: Akshit Sharma, Sarthak Dhomne, Mano Narasimha
 
+Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Mano Narasimha
+
 # System Requirements:
 
 We will focus on the following set of requirements while designing the parking lot:
@@ -31,4 +33,10 @@ We will focus on the following set of requirements while designing the parking l
 
 - The system should support a per-hour parking fee model. For example, customers have to pay $4 for the first hour, $3.5 for the second and third hours, and $2.5 for all the remaining hours.
 
+
+References:
+
+https://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
+
+https://www.javatpoint.com/parking-lot-design-java
 
