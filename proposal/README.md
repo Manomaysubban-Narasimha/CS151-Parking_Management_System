@@ -36,8 +36,8 @@ We will focus on the following set of requirements while designing the parking l
 
 References:
 
-https://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
+[1] https://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
 
-https://www.javatpoint.com/parking-lot-design-java
+[2] https://www.javatpoint.com/parking-lot-design-java
 
-https://leetcode.com/discuss/interview-question/124739/Parking-Lot-Design-Using-OO-Design
+[3] https://leetcode.com/discuss/interview-question/124739/Parking-Lot-Design-Using-OO-Design
