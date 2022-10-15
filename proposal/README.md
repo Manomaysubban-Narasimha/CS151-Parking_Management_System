@@ -40,3 +40,4 @@ https://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principle
 
 https://www.javatpoint.com/parking-lot-design-java
 
+https://leetcode.com/discuss/interview-question/124739/Parking-Lot-Design-Using-OO-Design
