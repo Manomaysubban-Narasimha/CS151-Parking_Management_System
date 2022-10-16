@@ -69,3 +69,9 @@ We will focus on the following set of requirements while designing the parking l
 [2] https://www.javatpoint.com/parking-lot-design-java
 
 [3] https://leetcode.com/discuss/interview-question/124739/Parking-Lot-Design-Using-OO-Design
+
+[4] https://www.youtube.com/watch?v=DSGsa0pu8-k
+
+[5] https://www.youtube.com/watch?v=tVRyb4HaHgw
+
+[6] https://www.educative.io/courses/grokking-the-object-oriented-design-interview/gxM3gRxmr8Z
