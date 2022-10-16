@@ -5,7 +5,7 @@ Group Members: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
 
 Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
 
-# System Requirements:
+## System Requirements:
 
 We will focus on the following set of requirements while designing the parking lot:
 
@@ -33,7 +33,7 @@ We will focus on the following set of requirements while designing the parking l
 
 - The system should support a per-hour parking fee model. For example, customers have to pay $4 for the first hour, $3.5 for the second and third hours, and $2.5 for all the remaining hours.
 
-Main Actors:
+## Main Actors:
 
 - Admin: Mainly responsible for adding and modifying parking floors, parking spots, entrance, and exit panels, adding/removing parking attendants, etc.
 
@@ -43,7 +43,7 @@ Main Actors:
 
 - System: To display messages on different info panels, as well as assigning and removing a vehicle from a parking spot.
 
-Use Cases:
+## Use Cases:
 
 - Add/Remove/Edit parking floor: To add, remove or modify a parking floor from the system. Each floor can have its own display board to show free parking spots.
 
@@ -62,7 +62,7 @@ Use Cases:
 - Add/Modify parking rate: To allow admin to add or modify the hourly parking rate.
 
 
-References:
+## References:
 
 [1] https://www.geeksforgeeks.org/design-parking-lot-using-object-oriented-principles/
 
