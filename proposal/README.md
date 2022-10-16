@@ -33,15 +33,19 @@ We will focus on the following set of requirements while designing the parking l
 
 - The system should support a per-hour parking fee model. For example, customers have to pay $4 for the first hour, $3.5 for the second and third hours, and $2.5 for all the remaining hours.
 
-## Main Actors:
+## Operations:
 
-- Admin: Mainly responsible for adding and modifying parking floors, parking spots, entrance, and exit panels, adding/removing parking attendants, etc.
+- Admin: 
+       Mainly responsible for adding and modifying parking floors, parking spots, entrance, and exit panels, adding/removing parking attendants, etc.
 
-- Customer: All customers can get a parking ticket and pay for it.
+- Customer: 
+       All customers can get a parking ticket and pay for it.
 
-- Parking attendant: Parking attendants can do all the activities on the customer’s behalf, and can take cash for ticket payment.
+- Parking attendant: 
+       Parking attendants can do all the activities on the customer’s behalf, and can take cash for ticket payment.
 
-- System: To display messages on different info panels, as well as assigning and removing a vehicle from a parking spot.
+- System: 
+       To display messages on different info panels, as well as assigning and removing a vehicle from a parking spot.
 
 ## Use Cases:
 
