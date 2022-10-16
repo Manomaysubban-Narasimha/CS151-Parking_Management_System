@@ -1,4 +1,4 @@
-# Parking Lot Management System
+# Parking Management System
 Group 6
 
 Group Members: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
