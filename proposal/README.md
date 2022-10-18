@@ -99,6 +99,10 @@ We will focus on the following set of requirements while designing the parking g
 
 - Example use cases: University parking, Mall parking, General City/Downtown parking 
 
+## Operating Environment:
+
+- Ran through oracle cloud and each process is in its own seperate Docker Container with appropriate names.
+
 
 ## References:
 
