@@ -10,13 +10,13 @@ Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Manomaysub
 
 - Finding a vacant spot is very tough for customers.
 
-- Payment is not easy since many modes of payment are not accepted.
+- Payment is not as easy, since many modes of payment are not accepted.
 
 - Some parking lots are not designed to accomodate all types of vehicles.
 
 ## Description:
 
-Our parking management system ensures that customers can find vacant spots with ease, and alerts them if all slots are full so that they can move on to another garage. Vehicles of all types and sizes are accomodated. Payment methods of all kinds are accepted. 
+Our parking management system ensures that customers can find vacant spots with ease, and alerts them if all slots are full so that they can move on to another floor or garage. Vehicles of all types and sizes are accomodated. Payment methods of all kinds are accepted and easy to use. 
 
 ## Functionalities:
 
