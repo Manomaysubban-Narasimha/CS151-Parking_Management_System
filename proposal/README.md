@@ -80,6 +80,24 @@ We will focus on the following set of requirements while designing the parking g
 
 - Add/Modify parking rate: To allow admin to add or modify the hourly parking rate.
 
+## Assumptions:
+
+- Gas vehicles are not parked in spots for electric vehicles.
+
+- Other vehicles are not parked in spots for motorcycle parking.
+
+- Handicap parking rules are followed.
+
+- Vehicles are parked properly and don't take up multiple spaces.
+
+
+## Intended Usage:
+
+- Users of this parking system are any people seeking parking for their vehicles, such as civilians, visitors, employees, and students.
+
+- The system is designed to be implemented in a variety of general parking lot settings, especially those with parking garages of multiple floors.
+
+- Example use cases: University parking, Mall parking, General City/Downtown parking 
 
 
 ## References:
