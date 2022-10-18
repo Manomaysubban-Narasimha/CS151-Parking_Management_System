@@ -90,14 +90,17 @@ We will focus on the following set of requirements while designing the parking g
 
 - Vehicles are parked properly and don't take up multiple spaces.
 
-
 ## Intended Usage:
 
 - Users of this parking system are any people seeking parking for their vehicles, such as civilians, visitors, employees, and students.
 
 - The system is designed to be implemented in a variety of general parking lot settings, especially those with parking garages of multiple floors.
 
-- Example use cases: University parking, Mall parking, General City/Downtown parking 
+- Example use cases: University parking, Mall parking, General City/Downtown parking
+
+## Operating Environment:
+
+- Ran through oracle cloud and each process is in its own seperate Docker Container with appropriate names.
 
 
 ## References:
