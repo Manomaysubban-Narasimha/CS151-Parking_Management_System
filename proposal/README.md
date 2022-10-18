@@ -1,4 +1,5 @@
 # Parking Management System
+
 Group 6
 
 Group Members: Akshit Sharma, Sarthak Dhomne, Manomaysubban Narasimha
@@ -7,11 +8,17 @@ Group members working on the proposal: Akshit Sharma, Sarthak Dhomne, Manomaysub
 
 ## Problem Statement:
 
-- People of San Jose are demanding a new parking garage to be built.
+- Finding a vacant spot is very tough for customers.
 
-- The new garage should be similar to San Jose State University's garage with some cool new features. 
+- Payment is not easy since many modes of payment are not accepted.
+
+- Some parking lots are not designed to accomodate all types of vehicles.
 
 ## Description:
+
+Our parking management system ensures that customers can find vacant spots with ease, and alerts them if all slots are full so that they can move on to another garage. Vehicles of all types and sizes are accomodated. Payment methods of all kinds are accepted. 
+
+## Functionalities:
 
 We will focus on the following set of requirements while designing the parking garage:
 
@@ -23,7 +30,7 @@ We will focus on the following set of requirements while designing the parking g
 
 - People can pay for the tickets at the automated exit panel or to the parking attendant.
 
-- People can choose to pay via either cash or credit cards or debit cards.
+- People can choose to pay via either cash or credit cards or debit cards or Apple pay or Google pay.
 
 - Each floor would consist of customer's info portal where the customers can pay for the ticket and in this case, those customers would not have to pay at the exit points.
 
@@ -31,7 +38,7 @@ We will focus on the following set of requirements while designing the parking g
 
 - Each parking floor will have many parking spots. The system should support multiple types of parking spots such as Compact, Large, Handicapped, Motorcycle, etc.
 
-- The Parking lot should have some parking spots specified for electric cars. These spots should have an electric panel through which customers can pay and charge their vehicles.
+- The Parking lot should have some parking spots specified for electric cars. These spots should have an electric panel through which customers can pay to charge their vehicles.
 
 - The system should support parking for different types of vehicles like car, truck, van, motorcycle, etc.
 
@@ -39,7 +46,7 @@ We will focus on the following set of requirements while designing the parking g
 
 - The system should support a per-hour parking fee model. For example, customers have to pay $4 for the first hour, $3.50 for the second and third hours, and $2.50 for all the remaining hours.
 
-## Operations:
+## Actors:
 
 - Admin: 
        Mainly responsible for adding and modifying parking floors, parking spots, entrance, and exit panels, adding/removing parking attendants, etc.
@@ -53,7 +60,7 @@ We will focus on the following set of requirements while designing the parking g
 - System: 
        To display messages on different info panels, as well as assigning and removing a vehicle from a parking spot in a particular floor.
 
-## Functionalities:
+## Operations:
 
 - Add/Remove/Edit parking floor: To add, remove or modify a parking floor from the system. Each floor can have its own display board to show free parking spots.
 
@@ -72,6 +79,7 @@ We will focus on the following set of requirements while designing the parking g
 - Cash payment: To pay the parking ticket through cash.
 
 - Add/Modify parking rate: To allow admin to add or modify the hourly parking rate.
+
 
 
 ## References:
