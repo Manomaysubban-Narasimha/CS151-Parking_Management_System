@@ -102,6 +102,10 @@ We will focus on the following set of requirements while designing the parking g
 
 - Ran through oracle cloud and each process is in its own seperate Docker Container with appropriate names.
 
+## Operating Environment:
+
+- Ran through oracle cloud and each process is in its own seperate Docker Container with appropriate names.
+
 
 ## References:
 
