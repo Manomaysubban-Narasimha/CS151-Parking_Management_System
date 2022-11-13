@@ -2,9 +2,9 @@ package parking_system;
 
 public class Vehicle {
 	private String licenseNumber;
-	private ParkingLotOptions.VehicleOptions vehicleType;
+	private Options.VehicleOptions vehicleType;
 	
-	public Vehicle(ParkingLotOptions.VehicleOptions vehicleType, String licenseNumber) {
+	public Vehicle(Options.VehicleOptions vehicleType, String licenseNumber) {
 		this.licenseNumber = licenseNumber;
 		this.vehicleType = vehicleType;
 	}
