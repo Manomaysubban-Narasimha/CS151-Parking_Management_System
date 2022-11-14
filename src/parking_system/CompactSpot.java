@@ -1,9 +1,11 @@
 package parking_system;
 
-public class CompactSpot extends ParkingSpot
-{
-    public CompactSpot(int number)
-    {
-        super(ParkingSpotType.COMPACT, number);
-    }
+import parking_system.Options.SpotOptions;
+
+public class CompactSpot extends ParkingSpot {
+
+	public CompactSpot( ) {
+		super(SpotOptions.COMPACT);
+	}
+	
 }

@@ -1,9 +1,8 @@
 package parking_system;
-
-public class HandicappedSpot extends ParkingSpot
-{
-    public HandicappedSpot(int number)
-    {
-        super(ParkingSpotType.HANDICAPPED, number);
-    }
+import parking_system.Options.SpotOptions;
+ 
+public class HandicappedSpot extends ParkingSpot {
+	public HandicappedSpot() {
+		super(SpotOptions.HANDICAPPED);
+	}
 }

@@ -1,33 +1,12 @@
 package parking_system;
 
-public abstract class Vehicle
-{
-    private String licenseNumber;
-    private final VehicleType type;
-    private ParkingTicket ticket;
+public class Vehicle {
+	private String licenseNumber;
+	private Options.VehicleOptions vehicleType;
+	
+	public Vehicle(Options.VehicleOptions vehicleType, String licenseNumber) {
+		this.licenseNumber = licenseNumber;
+		this.vehicleType = vehicleType;
+	}
 
-    public Vehicle(VehicleType type)
-    {
-        this.type = type;
-    }
-
-    public void assignTicket(ParkingTicket ticket)
-    {
-        this.ticket = ticket;
-    }
-
-    public VehicleType getType()
-    {
-        return type;
-    }
-
-    public String getLicenseNumber()
-    {
-        return licenseNumber;
-    }
-
-    public ParkingTicket getTicket()
-    {
-        return ticket;
-    }
 }
