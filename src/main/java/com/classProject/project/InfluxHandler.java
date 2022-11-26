@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class InfluxHandler {
     public InfluxHandler(){}
+	
     public void createDB(String dataBaseName) throws IOException{
         URL url = new URL("http://localhost:8086/query");
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
