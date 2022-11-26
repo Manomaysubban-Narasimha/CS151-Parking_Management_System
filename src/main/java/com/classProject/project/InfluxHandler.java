@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class InfluxHandler {
+	
     public InfluxHandler(){}
 	
     public void createDB(String dataBaseName) throws IOException{
