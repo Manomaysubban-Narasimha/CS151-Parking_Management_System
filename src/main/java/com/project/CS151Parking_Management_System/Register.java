@@ -52,7 +52,7 @@ public class Register extends VerticalLayout{
         l2.getStyle().set("margin-left", "9em");
         div.add(l2);
 
-        TextField passwordConfirm = new TextField();
+        PasswordField passwordConfirm = new PasswordField();
         Paragraph passwordLabelConfirm = new Paragraph("Confirm Password");
         HorizontalLayout l = new HorizontalLayout(passwordConfirm, passwordLabelConfirm);
         l.setAlignItems(Alignment.CENTER);
