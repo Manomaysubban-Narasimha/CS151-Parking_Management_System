@@ -1,4 +1,4 @@
-package com.classProject.project;
+package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
 import java.io.InputStream;
