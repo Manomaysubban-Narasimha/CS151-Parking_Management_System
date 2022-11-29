@@ -61,8 +61,9 @@ public class Login extends VerticalLayout{
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
                         );
                 }
-                else 
+                else{ 
                     statusText.setText("Wrong");
+                }
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

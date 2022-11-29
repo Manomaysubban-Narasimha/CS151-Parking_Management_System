@@ -1,13 +1,10 @@
 package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-import org.apache.logging.log4j.message.Message;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
@@ -16,13 +13,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.BeforeEvent;
-import com.vaadin.flow.router.HasUrlParameter;
-import com.vaadin.flow.router.OptionalParameter;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.WildcardParameter;
-import com.vaadin.flow.server.VaadinService;
-import com.vaadin.flow.server.VaadinServletRequest;
+
+
 
 
 @Route("homePage/:plateNumber?/:password?")
@@ -51,7 +44,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         });
         InfluxHandler influx = new InfluxHandler();
         try {
-            String passwordOfficial = influx.parseData(influx.getData("mydb"), plateString, false);
+            String passwordOfficial = influx.parseData(influx.getData("keys"), plateString, false);
             if(passString.equals(passwordOfficial)){
                 div1();
                 div2();
@@ -61,7 +54,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
                 add(new H1("Oops youre not supposed to be here"));
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }

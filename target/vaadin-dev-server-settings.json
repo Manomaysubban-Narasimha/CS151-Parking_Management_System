@@ -1,13 +1,13 @@
 {
-  "frontendFolder": "/Users/sdhomne/git/CS151-Parking_Management_System/./frontend",
+  "frontendFolder": "/Users/vsharma/projects/CS151-Parking_Management_System/./frontend",
   "themeFolder": "themes",
-  "themeResourceFolder": "/Users/sdhomne/git/CS151-Parking_Management_System/target/flow-frontend",
-  "staticOutput": "/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "themeResourceFolder": "/Users/vsharma/projects/CS151-Parking_Management_System/target/flow-frontend",
+  "staticOutput": "/Users/vsharma/projects/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
   "generatedFolder": "generated",
-  "frontendBundleOutput": "/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp",
+  "frontendBundleOutput": "/Users/vsharma/projects/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp",
   "addonFrontendFolder": "target/flow-frontend/",
   "themeName": "",
-  "clientServiceWorkerSource": "/Users/sdhomne/git/CS151-Parking_Management_System/target/sw.ts",
+  "clientServiceWorkerSource": "/Users/vsharma/projects/CS151-Parking_Management_System/target/sw.ts",
   "pwaEnabled": false,
   "offlineEnabled": false,
   "offlinePath": "'offline.html'"

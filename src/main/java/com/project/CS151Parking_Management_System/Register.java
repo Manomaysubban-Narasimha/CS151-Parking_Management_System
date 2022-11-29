@@ -46,7 +46,7 @@ public class Register extends VerticalLayout{
         l3.getStyle().set("margin-left", "9em");
         div.add(l3);
 
-//TODO: store vehicleType selection in DB
+        //TODO: store vehicleType selection in DB
         ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
         vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric Vehicle");
         HorizontalLayout l5 = new HorizontalLayout(vehicleType);

@@ -7,7 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-import com.vaadin.flow.component.combobox.ComboBox;
 
 public class InfluxHandler {
     public boolean createDB(String dataBaseName) throws IOException{
