@@ -44,7 +44,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         });
         InfluxHandler influx = new InfluxHandler();
         try {
-            String passwordOfficial = influx.parseData(influx.getData("keys"), plateString, false);
+            String passwordOfficial = influx.parseData(influx.getData("keys"), plateString);
             System.out.println(passwordOfficial);
             System.out.println(passString);
             if(passString.equals(passwordOfficial)){
@@ -96,7 +96,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             System.out.println(dtf.format(now)); 
             try {
                 influx.createDB("garage");
-                influx.postDataTime(dtf.format(now), plateString);
+                influx.postData(plateString, dtf.format(now), "garage");
                 currentAmount.getStyle().set("color", "green");
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -124,7 +124,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
     public boolean isGreen(){
         InfluxHandler influx = new InfluxHandler();
         try {
-            String time = influx.parseData(influx.getData("garage"), plateString, true);
+            String time = influx.parseData(influx.getData("garage"), plateString);
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
             LocalDateTime now = LocalDateTime.now();  
             String influxTime = dtf.format(now);

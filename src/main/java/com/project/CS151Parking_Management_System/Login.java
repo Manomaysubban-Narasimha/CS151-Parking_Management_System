@@ -49,10 +49,10 @@ public class Login extends VerticalLayout{
         loginButton.addClickListener(e -> {
             InfluxHandler influx = new InfluxHandler();
             try {
-                String dataMydb = influx.getData("mydb");
-                String dataKey = influx.getData("keys");
-                String passwordText = influx.parseData(dataMydb, licensePlate.getValue(), false);
-                String key = influx.parseData(dataKey, licensePlate.getValue(), false);
+
+                String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());
+                String key = influx.parseData(influx.getData("keys"), licensePlate.getValue());
+
                 if(passwordText.equals("Wrong License Plate"))
                     statusText.setText("We dont recognize that licenseplate");
                 else if(password.getValue().equals(passwordText)){
@@ -68,10 +68,8 @@ public class Login extends VerticalLayout{
                 e1.printStackTrace();
             }
         });
-
         div.add(loginButton);
         div.add(statusText);
         add(div);
-
     }
 }

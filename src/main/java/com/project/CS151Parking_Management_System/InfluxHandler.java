@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 public class InfluxHandler {
-    public boolean createDB(String dataBaseName) throws IOException{
+	public boolean createDB(String dataBaseName) throws IOException{
         URL url = new URL("http://localhost:8086/query");
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestMethod("POST");
@@ -47,8 +47,8 @@ public class InfluxHandler {
         }
     }
 
-    public boolean postData(String password, String licensePlate) throws IOException{
-        URL url = new URL("http://localhost:8086/write?db=mydb");
+    public boolean postData(String licenseplate, String secondParam, String database) throws IOException{
+        URL url = new URL("http://localhost:8086/write?db=" + database);
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestMethod("POST");
 
@@ -56,7 +56,7 @@ public class InfluxHandler {
 
 		httpConn.setDoOutput(true);
 		OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
-		writer.write("mymeas,password=" + password + " licensePlate=\"" + licensePlate + "\"");
+		writer.write("mymeas,secondParam=" + secondParam + " licensePlate=\"" + licenseplate + "\"");
 		writer.flush();
 		writer.close();
 		httpConn.getOutputStream().close();
@@ -71,61 +71,8 @@ public class InfluxHandler {
 		return false;
     }
 
-    public boolean postDataTime(String licensePlate, String hour) throws IOException{
-        URL url = new URL("http://localhost:8086/write?db=garage");
-		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
-		httpConn.setRequestMethod("POST");
-
-		httpConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-		httpConn.setDoOutput(true);
-		OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
-		writer.write("mymeas,licensePlate=" + licensePlate + " hour=\"" + hour + "\"");
-		writer.flush();
-		writer.close();
-		httpConn.getOutputStream().close();
-
-		InputStream responseStream = httpConn.getResponseCode() / 100 == 2
-				? httpConn.getInputStream()
-				: httpConn.getErrorStream();
-		try (Scanner s = new Scanner(responseStream).useDelimiter("\\A")) {
-            String response = s.hasNext() ? s.next() : "";
-			System.out.println(response);
-            if(response == "") return true;
-        }
-		return false;
-    }
-
-    public boolean postDataKey(String licensePlateKey, String key) throws IOException{
-        URL url = new URL("http://localhost:8086/write?db=keys");
-		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
-		httpConn.setRequestMethod("POST");
-
-		httpConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-		httpConn.setDoOutput(true);
-		OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
-
-		writer.write("mymeas,licensePlateKey=" + licensePlateKey + " zkey=\"" + key + "\"");
-		writer.flush();
-		writer.close();
-		httpConn.getOutputStream().close();
-
-		InputStream responseStream = httpConn.getResponseCode() / 100 == 2
-				? httpConn.getInputStream()
-				: httpConn.getErrorStream();
-		try (Scanner s = new Scanner(responseStream).useDelimiter("\\A")) {
-            String response = s.hasNext() ? s.next() : "";
-			System.out.println(response);
-            if(response == "") return true;
-        }
-		return false;
-    }
-
-	public String parseData(String response, String substring, Boolean isGarage){
-        int index;
-		if(isGarage) index = response.lastIndexOf(substring);
-		else index = response.indexOf(substring);
+	public String parseData(String response, String substring){
+		int index = response.indexOf(substring);
         if(index == -1) return "Wrong License Plate";
         String restOfresponse = response.substring(index);
         index = (restOfresponse.indexOf('"', restOfresponse.indexOf('"') + 1));

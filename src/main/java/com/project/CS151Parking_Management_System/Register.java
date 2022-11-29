@@ -131,11 +131,12 @@ public class Register extends VerticalLayout{
             if(passwordChecked && licenseChecked){
                 InfluxHandler influx = new InfluxHandler();
                 try {
-                    if(influx.parseData(influx.getData("mydb"), licensePlate.getValue(), false).equals("Wrong License Plate")){                            
+                    if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){                            
                         influx.createDB("mydb");
                         influx.createDB("keys");
-                        influx.postData(password.getValue(), licensePlate.getValue());
-                        influx.postDataKey(licensePlate.getValue(), influx.getAlphaNumericString(40));
+                        influx.createDB("vehicleType");
+                        influx.postData(licensePlate.getValue(), password.getValue(), "mydb");
+                        influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->
                                 ui.navigate("")
