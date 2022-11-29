@@ -113,6 +113,7 @@ public class Register extends VerticalLayout{
                 InfluxHandler influx = new InfluxHandler();
                 try {
                     influx.createDB("mydb");
+                    influx.createDB("keys");
                     influx.postData(password.getValue(), licensePlate.getValue());
                     influx.postDataKey(licensePlate.getValue(), influx.getAlphaNumericString(40));
                     Thread.sleep(2000);
