@@ -50,7 +50,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             if(passString.equals(passwordOfficial)){
                 div1();
                 div2();
-                // div3();
+
             }
             else{
                 add(new H1("Oops youre not supposed to be here"));
@@ -67,14 +67,20 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
 
-
-        H1 plate = new H1("Plate #" + plateString);
-        H1 password = new H1();
-
-        H1 currentAmount = new H1("Thank You for Choosing Us");
-
-        div.add(new HorizontalLayout(new VerticalLayout(plate, password), currentAmount));
-        add(div);
+        try {
+            H1 plate = new H1("Plate #" + plateString);
+            InfluxHandler influx = new InfluxHandler();
+            String type = " ";
+            System.out.println(plateString);
+            type = influx.parseData(influx.getData("vehicleType"), plateString);
+            H1 password = new H1(type);
+            H1 currentAmount = new H1("Thank You for Choosing Us");
+    
+            div.add(new HorizontalLayout(new VerticalLayout(plate, password), currentAmount));
+            add(div);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void div2(){
@@ -83,10 +89,10 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
-
         H1 payNeeded = new H1("Need to Pay for Parking?");
         Button pay = new Button("Pay Here");
         H1 currentAmount = new H1("Paid Status");
+
         pay.addClickListener(e -> {
             InfluxHandler influx = new InfluxHandler();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
@@ -99,23 +105,11 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-
         });
+
         if(isGreen()) currentAmount.getStyle().set("color", "green");
         else currentAmount.getStyle().set("color", "red");
-
         div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), currentAmount));
-        add(div);
-    }
-
-    public void div3(){
-        Div div = new Div();
-        setHorizontalComponentAlignment(Alignment.END, div);
-        div.getStyle().set("background-color", "#AFEEEE");
-        div.getStyle().set("width", "50%");
-        div.getStyle().set("height", "18.75em");
-        div.getStyle().set("border-radius", "10em");
-
         add(div);
     }
 
