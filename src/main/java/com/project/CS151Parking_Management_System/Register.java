@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -11,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+
 
 @Route("register")
 public class Register extends VerticalLayout{
@@ -23,7 +25,7 @@ public class Register extends VerticalLayout{
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
-        div.getStyle().set("height", "18.75em");
+        div.getStyle().set("height", "20.75em");
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
         
@@ -43,6 +45,18 @@ public class Register extends VerticalLayout{
         l3.setAlignItems(Alignment.CENTER);
         l3.getStyle().set("margin-left", "9em");
         div.add(l3);
+
+//TODO: store vehicleType selection in DB
+        ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
+        vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric Vehicle");
+        HorizontalLayout l5 = new HorizontalLayout(vehicleType);
+        l5.setAlignItems(Alignment.CENTER);
+        l5.getStyle().set("margin-left", "9em");
+        div.add(l5);
+
+        
+
+
 
 
         PasswordField password = new PasswordField();
