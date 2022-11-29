@@ -25,7 +25,7 @@ public class Register extends VerticalLayout{
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
-        div.getStyle().set("height", "20.75em");
+        div.getStyle().set("height", "25.75em");
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
         
@@ -48,14 +48,12 @@ public class Register extends VerticalLayout{
 
         //TODO: store vehicleType selection in DB
         ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
-        vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric Vehicle");
+        vehicleType.setItems("Motorcycle","Truck", "SUV", "Clean Air/Electric Vehicle", "Sedan/Hatchback");
         HorizontalLayout l5 = new HorizontalLayout(vehicleType);
         l5.setAlignItems(Alignment.CENTER);
         l5.getStyle().set("margin-left", "9em");
-        div.add(l5);
-
+        div.add(l5);     
         
-
 
 
 
@@ -72,6 +70,17 @@ public class Register extends VerticalLayout{
         l.setAlignItems(Alignment.CENTER);
         l.getStyle().set("margin-left", "9em");
         div.add(l);
+
+        Paragraph licenseNotMatch = new Paragraph("License Numbers Don't Match");
+        Paragraph passwordNotMatch = new Paragraph("Passwords Don't Match");
+        HorizontalLayout l6 = new HorizontalLayout(licenseNotMatch);
+        l6.setAlignItems(Alignment.CENTER);
+        HorizontalLayout l7 = new HorizontalLayout(passwordNotMatch);
+        l7.setAlignItems(Alignment.CENTER);
+
+
+
+
 
         Button registerButton = new Button("Register");
         registerButton.addClickListener(e -> {
@@ -92,20 +101,30 @@ public class Register extends VerticalLayout{
             if(!password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
                 passwordLabel.getStyle().set("color", "red");
                 passwordLabelConfirm.getStyle().set("color", "red");
+                l7.setAlignItems(Alignment.CENTER);
+                l7.getStyle().set("color", "red");
+                l7.getStyle().set("margin-left", "9em");
+                div.add(l7);
             }
             if(password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
                 passwordLabel.getStyle().set("color", "#065535");
                 passwordLabelConfirm.getStyle().set("color", "#065535");
+                div.remove(l7);
                 passwordChecked = true;
             }
 
             if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
                 licenseLabel.getStyle().set("color", "red");
                 licenseLabelConfirm.getStyle().set("color", "red");
+                l6.getStyle().set("color", "red");
+                l6.setAlignItems(Alignment.CENTER);
+                l6.getStyle().set("margin-left", "9em");
+                div.add(l6);
             }
             if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
                 licenseLabel.getStyle().set("color", "#065535");
                 licenseLabelConfirm.getStyle().set("color", "#065535");
+                div.remove(l6);
                 licenseChecked = true;
             } 
 
