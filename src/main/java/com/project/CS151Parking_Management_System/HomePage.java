@@ -45,6 +45,8 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         InfluxHandler influx = new InfluxHandler();
         try {
             String passwordOfficial = influx.parseData(influx.getData("keys"), plateString, false);
+            System.out.println(passwordOfficial);
+            System.out.println(passString);
             if(passString.equals(passwordOfficial)){
                 div1();
                 div2();
@@ -67,7 +69,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         // div.getStyle().set("border-radius", "10em");
 
         H1 plate = new H1("Plate #" + plateString);
-        H1 password = new H1(passString);
+        H1 password = new H1();
 
         H1 currentAmount = new H1("Thank You for Choosing Us");
 

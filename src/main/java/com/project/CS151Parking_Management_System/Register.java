@@ -112,14 +112,19 @@ public class Register extends VerticalLayout{
             if(passwordChecked && licenseChecked){
                 InfluxHandler influx = new InfluxHandler();
                 try {
-                    influx.createDB("mydb");
-                    influx.createDB("keys");
-                    influx.postData(password.getValue(), licensePlate.getValue());
-                    influx.postDataKey(licensePlate.getValue(), influx.getAlphaNumericString(40));
-                    Thread.sleep(2000);
-                    registerButton.getUI().ifPresent(ui ->
-                            ui.navigate("")
-                    );
+                    if(influx.parseData(influx.getData("mydb"), licensePlate.getValue(), false).equals("Wrong License Plate")){                            
+                        influx.createDB("mydb");
+                        influx.createDB("keys");
+                        influx.postData(password.getValue(), licensePlate.getValue());
+                        influx.postDataKey(licensePlate.getValue(), influx.getAlphaNumericString(40));
+                        Thread.sleep(2000);
+                        registerButton.getUI().ifPresent(ui ->
+                                ui.navigate("")
+                        );
+                    }
+                    else{
+                        registerButton.setText("That Licenseplate Is already Registered");
+                    }
                 } catch (IOException | InterruptedException e1) {
                     e1.printStackTrace();
                 }
