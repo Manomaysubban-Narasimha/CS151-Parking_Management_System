@@ -1,6 +1,7 @@
 package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.button.Button;
@@ -128,7 +129,7 @@ public class Register extends VerticalLayout{
                         System.out.println(vehicleType.getValue().toString());
 
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), password.getValue(), "mydb");
+                        influx.postData(licensePlate.getValue(), SHA256.toHexString(SHA256.getSHA(password.getValue())), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->
@@ -138,7 +139,7 @@ public class Register extends VerticalLayout{
                     else{
                         registerButton.setText("That Licenseplate Is already Registered");
                     }
-                } catch (IOException | InterruptedException e1) {
+                } catch (IOException | InterruptedException | NoSuchAlgorithmException e1) {
                     e1.printStackTrace();
                 }
             }

@@ -1,6 +1,7 @@
 package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.button.Button;
@@ -55,7 +56,7 @@ public class Login extends VerticalLayout{
 
                 if(passwordText.equals("Wrong License Plate"))
                     statusText.setText("We dont recognize that licenseplate");
-                else if(password.getValue().equals(passwordText)){
+                else if(SHA256.toHexString(SHA256.getSHA(password.getValue())).equals(passwordText)){
                     statusText.setText("Successful");
                         loginButton.getUI().ifPresent(ui ->
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
@@ -64,7 +65,7 @@ public class Login extends VerticalLayout{
                 else{ 
                     statusText.setText("Wrong");
                 }
-            } catch (IOException e1) {
+            } catch (IOException | NoSuchAlgorithmException e1) {
                 e1.printStackTrace();
             }
         });
