@@ -37,8 +37,6 @@ public class Register extends VerticalLayout{
         l4.getStyle().set("margin-left", "9em");
         div.add(l4);
 
-        
-
         TextField licensePlateConfirm = new TextField();
         Paragraph licenseLabelConfirm = new Paragraph("Confirm Plate #");
         HorizontalLayout l3 = new HorizontalLayout(licenseLabelConfirm, licensePlateConfirm);
@@ -46,16 +44,12 @@ public class Register extends VerticalLayout{
         l3.getStyle().set("margin-left", "9em");
         div.add(l3);
 
-        //TODO: store vehicleType selection in DB
         ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
         vehicleType.setItems("Motorcycle","Truck", "SUV", "Clean Air/Electric Vehicle", "Sedan/Hatchback");
         HorizontalLayout l5 = new HorizontalLayout(vehicleType);
         l5.setAlignItems(Alignment.CENTER);
         l5.getStyle().set("margin-left", "9em");
         div.add(l5);     
-        
-
-
 
         PasswordField password = new PasswordField();
         Paragraph passwordLabel = new Paragraph("Enter a Password");
@@ -77,10 +71,6 @@ public class Register extends VerticalLayout{
         l6.setAlignItems(Alignment.CENTER);
         HorizontalLayout l7 = new HorizontalLayout(passwordNotMatch);
         l7.setAlignItems(Alignment.CENTER);
-
-
-
-
 
         Button registerButton = new Button("Register");
         registerButton.addClickListener(e -> {
@@ -135,6 +125,9 @@ public class Register extends VerticalLayout{
                         influx.createDB("mydb");
                         influx.createDB("keys");
                         influx.createDB("vehicleType");
+                        System.out.println(vehicleType.getValue().toString());
+
+                        influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
                         influx.postData(licensePlate.getValue(), password.getValue(), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);

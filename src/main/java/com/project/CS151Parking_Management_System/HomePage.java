@@ -66,14 +66,13 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
-        // div.getStyle().set("border-radius", "10em");
+
 
         H1 plate = new H1("Plate #" + plateString);
         H1 password = new H1();
 
         H1 currentAmount = new H1("Thank You for Choosing Us");
 
-        
         div.add(new HorizontalLayout(new VerticalLayout(plate, password), currentAmount));
         add(div);
     }
@@ -84,7 +83,6 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
-        // div.getStyle().set("border-radius", "10em");
 
         H1 payNeeded = new H1("Need to Pay for Parking?");
         Button pay = new Button("Pay Here");
