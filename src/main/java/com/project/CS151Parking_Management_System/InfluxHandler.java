@@ -72,7 +72,7 @@ public class InfluxHandler {
     }
 
 	public String parseData(String response, String substring){
-		int index = response.indexOf(substring);
+		int index = response.lastIndexOf(substring);
         if(index == -1) return "Wrong License Plate";
         String restOfresponse = response.substring(index);
         index = (restOfresponse.indexOf('"', restOfresponse.indexOf('"') + 1));

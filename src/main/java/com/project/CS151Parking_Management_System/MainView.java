@@ -59,9 +59,13 @@ public class MainView extends VerticalLayout{
         div2.getStyle().set("text-align", "center");
         HtmlComponent br2 = new HtmlComponent("br");
         div2.add(br2);
+
+        PercentageFull pFull = new PercentageFull();
+        pFull.checkAndReset();
         H3 amountFull = new H3();
         amountFull.getStyle().set("color", "#1D3F6E");
-        amountFull.setText("151 is Currently" + " " + "% full");
+
+        amountFull.setText("151 is Currently " + (100 - (2 * pFull.getCurrentAmount())) + "% full");
         div2.add(amountFull);
         add(div2);
 
