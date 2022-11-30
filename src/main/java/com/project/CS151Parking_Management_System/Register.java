@@ -129,7 +129,7 @@ public class Register extends VerticalLayout{
                         System.out.println(vehicleType.getValue().toString());
 
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), SHA256.toHexString(SHA256.getSHA(password.getValue())), "mydb");
+                        influx.postData(licensePlate.getValue(), SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->
