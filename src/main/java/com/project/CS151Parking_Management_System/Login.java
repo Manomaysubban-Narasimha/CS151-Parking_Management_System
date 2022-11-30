@@ -56,7 +56,7 @@ public class Login extends VerticalLayout{
 
                 if(passwordText.equals("Wrong License Plate"))
                     statusText.setText("We dont recognize that licenseplate");
-                else if(SHA256.toHexString(SHA256.getSHA(password.getValue())).equals(passwordText)){
+                else if(SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())).equals(passwordText)){
                     statusText.setText("Successful");
                         loginButton.getUI().ifPresent(ui ->
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
