@@ -17,6 +17,8 @@ import com.vaadin.flow.router.Route;
 
 @Route("register")
 public class Register extends VerticalLayout{
+    private String pwd;
+	private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
     public Register() {
 
         HtmlComponent br = new HtmlComponent("br");
@@ -53,6 +55,8 @@ public class Register extends VerticalLayout{
         div.add(l5);     
 
         PasswordField password = new PasswordField();
+        pwd = new String(password.getValue());
+
         Paragraph passwordLabel = new Paragraph("Enter a Password");
         HorizontalLayout l2 = new HorizontalLayout(password, passwordLabel);
         l2.setAlignItems(Alignment.CENTER);
@@ -104,6 +108,7 @@ public class Register extends VerticalLayout{
                 passwordChecked = true;
             }
 
+
             if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
                 licenseLabel.getStyle().set("color", "red");
                 licenseLabelConfirm.getStyle().set("color", "red");
@@ -116,6 +121,31 @@ public class Register extends VerticalLayout{
                 licenseLabel.getStyle().set("color", "#065535");
                 licenseLabelConfirm.getStyle().set("color", "#065535");
                 div.remove(l6);
+                try {
+                    uppercaseCheck();
+                } 
+                catch (UpperCaseCharacterMissing e1) {
+                    System.out.println("No Uppercase present");
+                }
+                try {
+                    lowercaseCheck();
+                } 
+                catch (LowerCaseCharacterMissing e1) {
+                    System.out.println("No Lowercase present");
+                }
+                try {
+                    minCheck();
+                } 
+                catch (Minimum8CharactersRequired e1) {
+                    System.out.println("Not enough Characters");
+                }
+                try {
+                    numCheck();
+                }
+                catch (NumberCharacterMissing e1) {
+                    System.out.println("No Number present");
+                }
+                
                 licenseChecked = true;
             } 
 
@@ -143,8 +173,55 @@ public class Register extends VerticalLayout{
                     e1.printStackTrace();
                 }
             }
-        });
+        
+        });    
         div.add(registerButton);
 		add(div);
     }
+
+    public boolean uppercaseCheck() throws UpperCaseCharacterMissing {
+        for (int i = 0; i < pwd.length(); i++) {
+            if (Character.isUpperCase(pwd.charAt(i))) {
+                return true;
+            }
+        }
+        throw new UpperCaseCharacterMissing("Missing an uppercase character");        
+    }
+
+    public boolean lowercaseCheck() throws LowerCaseCharacterMissing {
+		for (int i = 0; i < pwd.length(); i++) {
+			if (Character.isLowerCase(pwd.charAt(i))) {
+				return true;
+			}
+		}
+		throw new LowerCaseCharacterMissing("Missing a lowercase character");
+
+	}
+
+	public boolean specialCheck() throws SpecialCharacterMissing {
+		for (int i = 0; i < specials.length(); i++) {
+			if (pwd.contains(Character.toString(specials.charAt(i)))) {
+				return true;
+			}
+		}
+		throw new SpecialCharacterMissing("Missing a special character");
+	}
+
+	public boolean minCheck() throws Minimum8CharactersRequired {
+		if (pwd.length() > 7) {
+			return true;
+		}
+		throw new Minimum8CharactersRequired("Need to have at least 8 characters");
+	}
+
+	public boolean numCheck() throws NumberCharacterMissing {
+		for (int i = 0; i < pwd.length(); i++) {
+			if (Character.isDigit(pwd.charAt(i))) {
+				return true;
+			}
+		}
+		throw new NumberCharacterMissing("Need to have at least one number");
+	}
+
+
 }
