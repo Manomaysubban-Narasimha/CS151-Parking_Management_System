@@ -10,12 +10,12 @@ import java.security.NoSuchAlgorithmException;
 * https://www.geeksforgeeks.org/difference-between-md5-and-sha1/
 * https://www.geeksforgeeks.org/difference-between-sha1-and-sha256/
 */
-public class SHA256
+public class SHA3_256
 {
    public static byte[] getSHA(String input) throws NoSuchAlgorithmException
    {
        // Static getInstance method is called with hashing SHA
-       MessageDigest md = MessageDigest.getInstance("SHA-256");
+       MessageDigest md = MessageDigest.getInstance("SHA3-256");
 
        // digest() method called
        // to calculate message digest of an input
