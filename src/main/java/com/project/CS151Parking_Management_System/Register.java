@@ -14,7 +14,6 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-
 @Route("register")
 public class Register extends VerticalLayout{
     private String pwd;
@@ -55,7 +54,6 @@ public class Register extends VerticalLayout{
         div.add(l5);     
 
         PasswordField password = new PasswordField();
-        pwd = new String(password.getValue());
 
         Paragraph passwordLabel = new Paragraph("Enter a Password");
         HorizontalLayout l2 = new HorizontalLayout(password, passwordLabel);
@@ -77,10 +75,21 @@ public class Register extends VerticalLayout{
         HorizontalLayout l7 = new HorizontalLayout(passwordNotMatch);
         l7.setAlignItems(Alignment.CENTER);
 
+        Paragraph PassReqsNeeded = new Paragraph();
+        HorizontalLayout l8 = new HorizontalLayout(PassReqsNeeded);
+        l8.setAlignItems(Alignment.CENTER);
+        l8.getStyle().set("margin-left", "9em");
+        l8.getStyle().set("color", "red");
+
+
         Button registerButton = new Button("Register");
         registerButton.addClickListener(e -> {
+
+            pwd = new String(password.getValue());
             boolean passwordChecked = false;
             boolean licenseChecked = false;
+            boolean requirement = true;
+
             if(password.getValue() == "") passwordLabel.getStyle().set("color", "red");
             else passwordLabel.getStyle().set("color", "black");
 
@@ -121,35 +130,59 @@ public class Register extends VerticalLayout{
                 licenseLabel.getStyle().set("color", "#065535");
                 licenseLabelConfirm.getStyle().set("color", "#065535");
                 div.remove(l6);
-                try {
-                    uppercaseCheck();
-                } 
-                catch (UpperCaseCharacterMissing e1) {
-                    System.out.println("No Uppercase present");
-                }
-                try {
-                    lowercaseCheck();
-                } 
-                catch (LowerCaseCharacterMissing e1) {
-                    System.out.println("No Lowercase present");
-                }
+                
                 try {
                     minCheck();
-                } 
+                    if(minCheck()) {
+                        div.remove(l8);
+                    }
+                }     
                 catch (Minimum8CharactersRequired e1) {
-                    System.out.println("Not enough Characters");
+                    requirement = false;
+                    PassReqsNeeded.setText("Password needs at least 8 Characters");
+                    div.add(l8);
                 }
+
                 try {
                     numCheck();
                 }
                 catch (NumberCharacterMissing e1) {
-                    System.out.println("No Number present");
+                    requirement = false;
+                    PassReqsNeeded.setText("Password needs a number");
+                    div.add(l8);
+                }
+
+                try {
+                    specialCheck();
+                }
+                catch (SpecialCharacterMissing e1) {
+                    requirement = false;
+                    PassReqsNeeded.setText("Password needs a special character");
+                    div.add(l8);
+                }
+
+                try {
+                    uppercaseCheck();
+                } 
+                catch (UpperCaseCharacterMissing e1) {
+                    requirement = false;
+                    PassReqsNeeded.setText("Password needs an Uppercase Character");
+                    div.add(l8);
+                }
+               
+                try {
+                    lowercaseCheck();
+                } 
+                catch (LowerCaseCharacterMissing e1) {
+                    requirement = false;
+                    PassReqsNeeded.setText("Password needs a Lowercase Character");
+                    div.add(l8);
                 }
                 
                 licenseChecked = true;
             } 
 
-            if(passwordChecked && licenseChecked){
+            if(passwordChecked && licenseChecked && requirement){
                 InfluxHandler influx = new InfluxHandler();
                 try {
                     if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){                            
@@ -179,12 +212,16 @@ public class Register extends VerticalLayout{
 		add(div);
     }
 
+    //Password Requirement Methods:
     public boolean uppercaseCheck() throws UpperCaseCharacterMissing {
         for (int i = 0; i < pwd.length(); i++) {
+            
             if (Character.isUpperCase(pwd.charAt(i))) {
+                
                 return true;
             }
         }
+        System.out.println(pwd);
         throw new UpperCaseCharacterMissing("Missing an uppercase character");        
     }
 
