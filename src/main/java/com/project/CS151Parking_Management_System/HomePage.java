@@ -23,6 +23,9 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
     String plateString = "";
     String passString = "";
+    H1 currentAmount = new H1("");
+    PercentageFull pFull = new PercentageFull();
+
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
@@ -33,21 +36,22 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             plateString = id;
         }, 
         () -> {
-            System.out.println("UHOH");
         });
 
         password.ifPresentOrElse(id -> {
             passString = id;
         }, 
         () -> {
-            System.out.println("UHOH");
         });
         InfluxHandler influx = new InfluxHandler();
         try {
             String passwordOfficial = influx.parseData(influx.getData("keys"), plateString);
-            System.out.println(passwordOfficial);
-            System.out.println(passString);
+            
+            pFull.checkAndReset();
             if(passString.equals(passwordOfficial)){
+                if(pFull.getCurrentAmount() <= 0){
+                    currentAmount.setText(100 + "% Full");
+                }else currentAmount.setText(100 - (pFull.getCurrentAmount() * 2) + "% Full");
                 div1();
                 div2();
 
@@ -71,10 +75,9 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             H1 plate = new H1("Plate #" + plateString);
             InfluxHandler influx = new InfluxHandler();
             String type = " ";
-            System.out.println(plateString);
+
             type = influx.parseData(influx.getData("vehicleType"), plateString);
             H1 password = new H1(type);
-            H1 currentAmount = new H1("Thank You for Choosing Us");
     
             div.add(new HorizontalLayout(new VerticalLayout(plate, password), currentAmount));
             add(div);
@@ -91,25 +94,33 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("height", "18.75em");
         H1 payNeeded = new H1("Need to Pay for Parking?");
         Button pay = new Button("Pay Here");
-        H1 currentAmount = new H1("Paid Status");
+        H1 paidStatus = new H1("Paid Status");
 
         pay.addClickListener(e -> {
             InfluxHandler influx = new InfluxHandler();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
             LocalDateTime now = LocalDateTime.now();  
-            System.out.println(dtf.format(now)); 
+
             try {
-                influx.createDB("garage");
-                influx.postData(plateString, dtf.format(now), "garage");
-                currentAmount.getStyle().set("color", "green");
+                if(!isGreen() && pFull.getCurrentAmount() != 0){
+                    int toUpdate = pFull.getCurrentAmount();
+
+                    toUpdate = toUpdate - 1;
+
+                    currentAmount.setText(100 - (toUpdate * 2) + "% Full");
+                    pFull.updateCurrentAmount(toUpdate);
+                    paidStatus.getStyle().set("color", "green");
+                    influx.createDB("garage");
+                    influx.postData(plateString, dtf.format(now), "garage");
+                }
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         });
 
-        if(isGreen()) currentAmount.getStyle().set("color", "green");
-        else currentAmount.getStyle().set("color", "red");
-        div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), currentAmount));
+        if(isGreen()) paidStatus.getStyle().set("color", "green");
+        else paidStatus.getStyle().set("color", "red");
+        div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), paidStatus));
         add(div);
     }
 
@@ -120,7 +131,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
             LocalDateTime now = LocalDateTime.now();  
             String influxTime = dtf.format(now);
-            System.out.println("Time: " + time + "   DTF: " + influxTime);
+
             if(influxTime.equals(time)) return true;
             return false;
         } catch (IOException e) {
