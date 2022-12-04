@@ -26,10 +26,8 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
     H1 currentAmount = new H1("");
     PercentageFull pFull = new PercentageFull();
 
-
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        // TODO Auto-generated method stub
         final Optional<String> plateNumber = event.getRouteParameters().get("plateNumber");
         final Optional<String> password = event.getRouteParameters().get("password");
         plateNumber.ifPresentOrElse(id -> {
@@ -70,9 +68,13 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
+        div.getStyle().set("border-radius", "4em");
+        div.getStyle().set("font-family", "futura");
+
+
 
         try {
-            H1 plate = new H1("Plate #" + plateString);
+            H1 plate = new H1("Plate #: " + plateString);
             InfluxHandler influx = new InfluxHandler();
             String type = " ";
 
@@ -92,9 +94,15 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "100%");
         div.getStyle().set("height", "18.75em");
+        div.getStyle().set("border-radius", "4em");
+        div.getStyle().set("font-family", "futura");
         H1 payNeeded = new H1("Need to Pay for Parking?");
         Button pay = new Button("Pay Here");
+        pay.getStyle().set("font-size", "1.5em");
         H1 paidStatus = new H1("Paid Status");
+        Button leave = new Button("Leave Garage");
+        leave.getStyle().set("font-size", "1.5em");
+
 
         pay.addClickListener(e -> {
             InfluxHandler influx = new InfluxHandler();
@@ -118,10 +126,17 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             }
         });
 
-        if(isGreen()) paidStatus.getStyle().set("color", "green");
-        else paidStatus.getStyle().set("color", "red");
-        div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), paidStatus));
-        add(div);
+        if(isGreen()) {
+            paidStatus.getStyle().set("color", "green");
+            div.add(new HorizontalLayout(new VerticalLayout(payNeeded, leave), paidStatus));
+            add(div);
+
+        } 
+        else {
+            paidStatus.getStyle().set("color", "red"); 
+            div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), paidStatus));
+            add(div);
+        }
     }
 
     public boolean isGreen(){

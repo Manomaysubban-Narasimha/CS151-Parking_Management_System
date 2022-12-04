@@ -22,6 +22,8 @@ public class MainView extends VerticalLayout{
         div.getStyle().set("height", "18.75em");
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
+        div.getStyle().set("font-family", "futura");
+
 
         HtmlComponent br = new HtmlComponent("br");
         HtmlComponent br3 = new HtmlComponent("br");
@@ -57,6 +59,8 @@ public class MainView extends VerticalLayout{
         div2.getStyle().set("margin", "auto");
         div2.getStyle().set("border-radius", "10em");
         div2.getStyle().set("text-align", "center");
+        div2.getStyle().set("font-family", "futura");
+
         HtmlComponent br2 = new HtmlComponent("br");
         div2.add(br2);
 
@@ -76,6 +80,8 @@ public class MainView extends VerticalLayout{
         div3.getStyle().set("height", "6.75em");
         div3.getStyle().set("margin", "auto");
         div3.getStyle().set("border-radius", "10em");
+        div3.getStyle().set("font-family", "lato");
+
         Paragraph creds = new Paragraph("A Group 6 Production");
         creds.getStyle().set("color", "#1D3F6E");
         div3.add(br);

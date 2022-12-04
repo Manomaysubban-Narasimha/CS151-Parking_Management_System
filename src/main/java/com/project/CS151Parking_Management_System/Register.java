@@ -19,7 +19,7 @@ public class Register extends VerticalLayout{
     private String pwd;
 	private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
     public Register() {
-
+        
         HtmlComponent br = new HtmlComponent("br");
 
         getStyle().set("text-align", "center");
@@ -47,7 +47,7 @@ public class Register extends VerticalLayout{
         div.add(l3);
 
         ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
-        vehicleType.setItems("Motorcycle","Truck", "SUV", "Clean Air/Electric Vehicle", "Sedan/Hatchback");
+        vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric", "Sedan", "Compact");
         HorizontalLayout l5 = new HorizontalLayout(vehicleType);
         l5.setAlignItems(Alignment.CENTER);
         l5.getStyle().set("margin-left", "9em");
