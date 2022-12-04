@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 
 public class InfluxHandler {
+
 	public boolean createDB(String dataBaseName) throws IOException{
         URL url = new URL("http://localhost:8086/query");
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
@@ -28,9 +29,8 @@ public class InfluxHandler {
 				: httpConn.getErrorStream();
 		try (Scanner s = new Scanner(responseStream).useDelimiter("\\A")) {
             String response = s.hasNext() ? s.next() : "";
-			if(response == "") return true;
+			return "".equals(response);
         }
-		return false;
     }
 
     public String getData(String dataBaseName) throws IOException{
@@ -42,8 +42,7 @@ public class InfluxHandler {
 				? httpConn.getInputStream()
 				: httpConn.getErrorStream();
 		try (Scanner s = new Scanner(responseStream).useDelimiter("\\A")) {
-            String response = s.hasNext() ? s.next() : "";
-            return response;
+            return s.hasNext() ? s.next() : "";
         }
     }
 
@@ -66,9 +65,8 @@ public class InfluxHandler {
 				: httpConn.getErrorStream();
 		try (Scanner s = new Scanner(responseStream).useDelimiter("\\A")) {
             String response = s.hasNext() ? s.next() : "";
-            if(response == "") return true;
+            return response.equals("");
         }
-		return false;
     }
 
 	public String parseData(String response, String substring){
@@ -84,28 +82,23 @@ public class InfluxHandler {
 	public String getAlphaNumericString(int n){
 
 		// chose a Character random from this String
-		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		String alphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 			+ "0123456789"
 			+ "abcdefghijklmnopqrstuvxyz";
 
-		// create StringBuffer size of AlphaNumericString
+		// create StringBuffer size of alphaNumericString
 		StringBuilder sb = new StringBuilder(n);
 
 		for (int i = 0; i < n; i++) {
 
 		// generate a random number between
-		// 0 to AlphaNumericString variable length
-		int index
-		= (int)(AlphaNumericString.length()
-		* Math.random());
+		// 0 to alphaNumericString variable length
+		int index = (int)(alphaNumericString.length()* Math.random());
 
 		// add Character one by one in end of sb
-		sb.append(AlphaNumericString
-		.charAt(index));
+		sb.append(alphaNumericString.charAt(index));
 		}
 
 		return sb.toString();
 	}
-
-    public InfluxHandler(){}
 }

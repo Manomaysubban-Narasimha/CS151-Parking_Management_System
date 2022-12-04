@@ -16,14 +16,38 @@ import com.vaadin.flow.router.Route;
 
 @Route("register")
 public class Register extends VerticalLayout{
+
     private String pwd;
 	private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+    private HtmlComponent lineBreak;
+    private Div div;
+    private TextField licensePlate;
+    private TextField licensePlateConfirm;
+    private Paragraph licenseLabel;
+    private Paragraph licenseLabelConfirm;
+    private Paragraph passwordLabel;
+    private HorizontalLayout licenseLayout;
+    private HorizontalLayout confirmLicenseLayout;
+    private HorizontalLayout vehicleTypeLayout, passwordLayout;
+    private ComboBox vehicleType;
+    private PasswordField password;
+    private PasswordField passwordConfirm;
+    private Paragraph passwordLabelConfirm;
+    private HorizontalLayout passwordConfirmLayout;
+    private Paragraph licenseNotMatch;
+    private Paragraph passwordNotMatch;
+    private HorizontalLayout licenseNotMatchLayout;
+    private HorizontalLayout passwordNotMatchLayout;
+    private Paragraph passReqsNeeded;
+    private HorizontalLayout passwordReqsDisplay;
+    private Button registerButton;
+
     public Register() {
         
-        HtmlComponent br = new HtmlComponent("br");
+        lineBreak = new HtmlComponent("br");
 
         getStyle().set("text-align", "center");
-        Div div = new Div();
+        div = new Div();
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
@@ -31,58 +55,61 @@ public class Register extends VerticalLayout{
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
         
-        div.add(br);
-        TextField licensePlate = new TextField();
-        Paragraph licenseLabel = new Paragraph("License Plate #");
-        HorizontalLayout l4 = new HorizontalLayout(licenseLabel, licensePlate);
-        l4.setAlignItems(Alignment.CENTER);
-        l4.getStyle().set("margin-left", "9em");
-        div.add(l4);
+        div.add(lineBreak);
+        licensePlate = new TextField();
+        licenseLabel = new Paragraph("License Plate #");
+        licenseLayout = new HorizontalLayout(licenseLabel, licensePlate);
+        licenseLayout.setAlignItems(Alignment.CENTER);
+        licenseLayout.getStyle().set("margin-left", "9em");
+        div.add(licenseLayout);
 
-        TextField licensePlateConfirm = new TextField();
-        Paragraph licenseLabelConfirm = new Paragraph("Confirm Plate #");
-        HorizontalLayout l3 = new HorizontalLayout(licenseLabelConfirm, licensePlateConfirm);
-        l3.setAlignItems(Alignment.CENTER);
-        l3.getStyle().set("margin-left", "9em");
-        div.add(l3);
+        licensePlateConfirm = new TextField();
+        licenseLabelConfirm = new Paragraph("Confirm Plate #");
+        confirmLicenseLayout = new HorizontalLayout(licenseLabelConfirm, licensePlateConfirm);
+        confirmLicenseLayout.setAlignItems(Alignment.CENTER);
+        confirmLicenseLayout.getStyle().set("margin-left", "9em");
+        div.add(confirmLicenseLayout);
 
-        ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
-        vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric", "Sedan", "Compact");
-        HorizontalLayout l5 = new HorizontalLayout(vehicleType);
-        l5.setAlignItems(Alignment.CENTER);
-        l5.getStyle().set("margin-left", "9em");
-        div.add(l5);     
+        vehicleType = new ComboBox("Select your vehicle type: ");
+        vehicleType.setItems("Motorcycle", "Truck", "SUV", "Electric", "Sedan", "Compact");
 
-        PasswordField password = new PasswordField();
+        vehicleTypeLayout = new HorizontalLayout(vehicleType);
+        vehicleTypeLayout.setAlignItems(Alignment.CENTER);
+        vehicleTypeLayout.getStyle().set("margin-left", "9em");
+        div.add(vehicleTypeLayout);     
 
-        Paragraph passwordLabel = new Paragraph("Enter a Password");
-        HorizontalLayout l2 = new HorizontalLayout(password, passwordLabel);
-        l2.setAlignItems(Alignment.CENTER);
-        l2.getStyle().set("margin-left", "9em");
-        div.add(l2);
+        password = new PasswordField();
 
-        PasswordField passwordConfirm = new PasswordField();
-        Paragraph passwordLabelConfirm = new Paragraph("Confirm Password");
-        HorizontalLayout l = new HorizontalLayout(passwordConfirm, passwordLabelConfirm);
-        l.setAlignItems(Alignment.CENTER);
-        l.getStyle().set("margin-left", "9em");
-        div.add(l);
+        passwordLabel = new Paragraph("Enter a Password");
 
-        Paragraph licenseNotMatch = new Paragraph("License Numbers Don't Match");
-        Paragraph passwordNotMatch = new Paragraph("Passwords Don't Match");
-        HorizontalLayout l6 = new HorizontalLayout(licenseNotMatch);
-        l6.setAlignItems(Alignment.CENTER);
-        HorizontalLayout l7 = new HorizontalLayout(passwordNotMatch);
-        l7.setAlignItems(Alignment.CENTER);
+        passwordLayout = new HorizontalLayout(password, passwordLabel);
+        passwordLayout.setAlignItems(Alignment.CENTER);
+        passwordLayout.getStyle().set("margin-left", "9em");
+        div.add(passwordLayout);
 
-        Paragraph PassReqsNeeded = new Paragraph();
-        HorizontalLayout l8 = new HorizontalLayout(PassReqsNeeded);
-        l8.setAlignItems(Alignment.CENTER);
-        l8.getStyle().set("margin-left", "9em");
-        l8.getStyle().set("color", "red");
+        passwordConfirm = new PasswordField();
+        passwordLabelConfirm = new Paragraph("Confirm Password");
+
+        passwordConfirmLayout = new HorizontalLayout(passwordConfirm, passwordLabelConfirm);
+        passwordConfirmLayout.setAlignItems(Alignment.CENTER);
+        passwordConfirmLayout.getStyle().set("margin-left", "9em");
+        div.add(passwordConfirmLayout);
+
+        licenseNotMatch = new Paragraph("License Numbers Don't Match");
+        passwordNotMatch = new Paragraph("Passwords Don't Match");
+        licenseNotMatchLayout = new HorizontalLayout(licenseNotMatch);
+        licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
+        passwordNotMatchLayout = new HorizontalLayout(passwordNotMatch);
+        passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
+
+        passReqsNeeded = new Paragraph();
+        passwordReqsDisplay = new HorizontalLayout(passReqsNeeded);
+        passwordReqsDisplay.setAlignItems(Alignment.CENTER);
+        passwordReqsDisplay.getStyle().set("margin-left", "9em");
+        passwordReqsDisplay.getStyle().set("color", "red");
 
 
-        Button registerButton = new Button("Register");
+        registerButton = new Button("Register");
         registerButton.addClickListener(e -> {
 
             pwd = new String(password.getValue());
@@ -90,57 +117,57 @@ public class Register extends VerticalLayout{
             boolean licenseChecked = false;
             boolean requirement = true;
 
-            if(password.getValue() == "") passwordLabel.getStyle().set("color", "red");
+            if("".equals(password.getValue())) passwordLabel.getStyle().set("color", "red");
             else passwordLabel.getStyle().set("color", "black");
 
-            if(licensePlate.getValue() == "") licenseLabel.getStyle().set("color", "red");
+            if("".equals(licensePlate.getValue())) licenseLabel.getStyle().set("color", "red");
             else licenseLabel.getStyle().set("color", "black");
 
-            if(licensePlateConfirm.getValue() == "") licenseLabelConfirm.getStyle().set("color", "red");
+            if("".equals(licensePlateConfirm.getValue())) licenseLabelConfirm.getStyle().set("color", "red");
             else licenseLabelConfirm.getStyle().set("color", "black");
 
-            if(passwordConfirm.getValue() == "") passwordLabelConfirm.getStyle().set("color", "red");
+            if("".equals(passwordConfirm.getValue())) passwordLabelConfirm.getStyle().set("color", "red");
             else passwordLabelConfirm.getStyle().set("color", "black");
             
-            if(!password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
+            if(!password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
                 passwordLabel.getStyle().set("color", "red");
                 passwordLabelConfirm.getStyle().set("color", "red");
-                l7.setAlignItems(Alignment.CENTER);
-                l7.getStyle().set("color", "red");
-                l7.getStyle().set("margin-left", "9em");
-                div.add(l7);
+                passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
+                passwordNotMatchLayout.getStyle().set("color", "red");
+                passwordNotMatchLayout.getStyle().set("margin-left", "9em");
+                div.add(passwordNotMatchLayout);
             }
-            if(password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
+            if(password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
                 passwordLabel.getStyle().set("color", "#065535");
                 passwordLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(l7);
+                div.remove(passwordNotMatchLayout);
                 passwordChecked = true;
             }
 
 
-            if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
+            if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
                 licenseLabel.getStyle().set("color", "red");
                 licenseLabelConfirm.getStyle().set("color", "red");
-                l6.getStyle().set("color", "red");
-                l6.setAlignItems(Alignment.CENTER);
-                l6.getStyle().set("margin-left", "9em");
-                div.add(l6);
+                licenseNotMatchLayout.getStyle().set("color", "red");
+                licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
+                licenseNotMatchLayout.getStyle().set("margin-left", "9em");
+                div.add(licenseNotMatchLayout);
             }
-            if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
+            if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
                 licenseLabel.getStyle().set("color", "#065535");
                 licenseLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(l6);
+                div.remove(licenseNotMatchLayout);
                 
                 try {
                     minCheck();
                     if(minCheck()) {
-                        div.remove(l8);
+                        div.remove(passwordReqsDisplay);
                     }
                 }     
                 catch (Minimum8CharactersRequired e1) {
                     requirement = false;
-                    PassReqsNeeded.setText("Password needs at least 8 Characters");
-                    div.add(l8);
+                    passReqsNeeded.setText("Password needs at least 8 Characters");
+                    div.add(passwordReqsDisplay);
                 }
 
                 try {
@@ -148,8 +175,8 @@ public class Register extends VerticalLayout{
                 }
                 catch (NumberCharacterMissing e1) {
                     requirement = false;
-                    PassReqsNeeded.setText("Password needs a number");
-                    div.add(l8);
+                    passReqsNeeded.setText("Password needs a number");
+                    div.add(passwordReqsDisplay);
                 }
 
                 try {
@@ -157,8 +184,8 @@ public class Register extends VerticalLayout{
                 }
                 catch (SpecialCharacterMissing e1) {
                     requirement = false;
-                    PassReqsNeeded.setText("Password needs a special character");
-                    div.add(l8);
+                    passReqsNeeded.setText("Password needs a special character");
+                    div.add(passwordReqsDisplay);
                 }
 
                 try {
@@ -166,8 +193,8 @@ public class Register extends VerticalLayout{
                 } 
                 catch (UpperCaseCharacterMissing e1) {
                     requirement = false;
-                    PassReqsNeeded.setText("Password needs an Uppercase Character");
-                    div.add(l8);
+                    passReqsNeeded.setText("Password needs an Uppercase Character");
+                    div.add(passwordReqsDisplay);
                 }
                
                 try {
@@ -175,8 +202,8 @@ public class Register extends VerticalLayout{
                 } 
                 catch (LowerCaseCharacterMissing e1) {
                     requirement = false;
-                    PassReqsNeeded.setText("Password needs a Lowercase Character");
-                    div.add(l8);
+                    passReqsNeeded.setText("Password needs a Lowercase Character");
+                    div.add(passwordReqsDisplay);
                 }
                 
                 licenseChecked = true;
@@ -243,7 +270,8 @@ public class Register extends VerticalLayout{
 	}
 
 	public boolean minCheck() throws Minimum8CharactersRequired {
-		if (pwd.length() > 7) {
+        final int MIN_CHARS_REQUIRED = 8;
+		if (pwd.length() >= MIN_CHARS_REQUIRED) {
 			return true;
 		}
 		throw new Minimum8CharactersRequired("Need to have at least 8 characters");

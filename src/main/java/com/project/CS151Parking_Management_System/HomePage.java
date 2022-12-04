@@ -21,10 +21,10 @@ import com.vaadin.flow.router.Route;
 @Route("homePage/:plateNumber?/:password?")
 public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
-    String plateString = "";
-    String passString = "";
-    H1 currentAmount = new H1("");
-    PercentageFull pFull = new PercentageFull();
+    private String plateString = "";
+    private String passString = "";
+    private H1 currentAmount = new H1("");
+    private PercentageFull pFull = new PercentageFull();
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
@@ -76,7 +76,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         try {
             H1 plate = new H1("Plate #: " + plateString);
             InfluxHandler influx = new InfluxHandler();
-            String type = " ";
+            String type;
 
             type = influx.parseData(influx.getData("vehicleType"), plateString);
             H1 password = new H1(type);
@@ -113,7 +113,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
                 if(!isGreen() && pFull.getCurrentAmount() != 0){
                     int toUpdate = pFull.getCurrentAmount();
 
-                    toUpdate = toUpdate - 1;
+                    toUpdate -= 1;
 
                     currentAmount.setText(100 - (toUpdate * 2) + "% Full");
                     pFull.updateCurrentAmount(toUpdate);
@@ -147,8 +147,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             LocalDateTime now = LocalDateTime.now();  
             String influxTime = dtf.format(now);
 
-            if(influxTime.equals(time)) return true;
-            return false;
+            return influxTime.equals(time);
         } catch (IOException e) {
             e.printStackTrace();
         }

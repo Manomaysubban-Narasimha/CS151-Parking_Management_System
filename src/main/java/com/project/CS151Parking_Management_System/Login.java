@@ -15,11 +15,24 @@ import com.vaadin.flow.router.Route;
 
 @Route("login")
 public class Login extends VerticalLayout{
+
+    private HtmlComponent lineBreak;
+    private Div div;
+    private TextField licensePlate;
+    private Paragraph licenseLabel;
+    private HorizontalLayout licenseLayout;
+    private PasswordField password;
+    private Paragraph passwordLabel;
+    private  HorizontalLayout passwordLayout;
+    private Button loginButton;
+    private Paragraph statusText;
+    
+
     public Login() {
-        HtmlComponent br = new HtmlComponent("br");
+        lineBreak = new HtmlComponent("br");
 
         getStyle().set("text-align", "center");
-        Div div = new Div();
+        div = new Div();
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
@@ -27,25 +40,25 @@ public class Login extends VerticalLayout{
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
         
-        div.add(br);
-        TextField licensePlate = new TextField();
-        Paragraph licenseLabel = new Paragraph("License Plate #");
-        HorizontalLayout l4 = new HorizontalLayout(licenseLabel, licensePlate);
-        l4.setAlignItems(Alignment.CENTER);
-        l4.getStyle().set("margin-left", "9em");
-        div.add(l4);
+        div.add(lineBreak);
+        licensePlate = new TextField();
+        licenseLabel = new Paragraph("License Plate #");
+        licenseLayout = new HorizontalLayout(licenseLabel, licensePlate);
+        licenseLayout.setAlignItems(Alignment.CENTER);
+        licenseLayout.getStyle().set("margin-left", "9em");
+        div.add(licenseLayout);
 
         
 
-        PasswordField password = new PasswordField();
-        Paragraph passwordLabel = new Paragraph("Password");
-        HorizontalLayout l3 = new HorizontalLayout(password, passwordLabel);
-        l3.setAlignItems(Alignment.CENTER);
-        l3.getStyle().set("margin-left", "9em");
-        div.add(l3);
+        password = new PasswordField();
+        passwordLabel = new Paragraph("Password");
+        passwordLayout = new HorizontalLayout(password, passwordLabel);
+        passwordLayout.setAlignItems(Alignment.CENTER);
+        passwordLayout.getStyle().set("margin-left", "9em");
+        div.add(passwordLayout);
 
-        Button loginButton = new Button("Login");
-        Paragraph statusText = new Paragraph("Please Enter Your Information");
+        loginButton = new Button("Login");
+        statusText = new Paragraph("Please Enter Your Information");
         statusText.getStyle().set("color", "#1D3F6E");
         loginButton.addClickListener(e -> {
             InfluxHandler influx = new InfluxHandler();
@@ -54,8 +67,8 @@ public class Login extends VerticalLayout{
                 String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());
                 String key = influx.parseData(influx.getData("keys"), licensePlate.getValue());
 
-                if(passwordText.equals("Wrong License Plate"))
-                    statusText.setText("We dont recognize that licenseplate");
+                if(passwordText.equals("Wrong License Plate."))
+                    statusText.setText("We don't recognize that license plate.");
                 else if(SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())).equals(passwordText)){
                     statusText.setText("Successful");
                         loginButton.getUI().ifPresent(ui ->
