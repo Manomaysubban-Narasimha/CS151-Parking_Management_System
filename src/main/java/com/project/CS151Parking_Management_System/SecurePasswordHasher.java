@@ -50,15 +50,16 @@ public class SecurePasswordHasher
     boolean passwordsMatch(String userPassword, String dbPassword) throws NoSuchAlgorithmException
     {
         StringBuilder compare = new StringBuilder(getSaltedPassword(userPassword));
+        boolean passwordMatch = false;
         // trying to figure out which pepper suits
         for(int i = 0; i < NUM_OF_ASCII_CHARS; i ++)
         {
             compare.append((char)i);
             if(toHexString(getSHA(compare.toString())).equals(dbPassword))
-                return true;
+                passwordMatch = true;
             compare.deleteCharAt(compare.lastIndexOf(((char)i) + ""));
         }
-        return false;
+        return passwordMatch;
     }
 
     private byte[] getSHA(String input) throws NoSuchAlgorithmException
