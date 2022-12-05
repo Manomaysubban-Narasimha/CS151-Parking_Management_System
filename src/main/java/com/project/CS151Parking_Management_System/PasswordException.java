@@ -1,48 +1,45 @@
 package com.project.CS151Parking_Management_System;
 
 public class PasswordException extends Exception {
-	public PasswordException(String s) {
-		super(s);
+	public PasswordException(String message) {
+		super(message);
 	}
 }
 
-class UpperCaseCharacterMissing extends PasswordException {
-	String password;
-	public UpperCaseCharacterMissing(String password) {
-		super(password);
-		this.password = password;
+class UpperCaseCharacterMissingException extends PasswordException {
+	public UpperCaseCharacterMissingException(String message) {
+		super(message);
     }
 }
 
-class SpecialCharacterMissing extends PasswordException {
-    String password;
-    public SpecialCharacterMissing(String password) {
-        super(password);
-        this.password = password;
+class SpecialCharacterMissingException extends PasswordException {
+    public SpecialCharacterMissingException(String message) {
+        super(message);
     }    
 }
     
-class NumberCharacterMissing extends PasswordException {
-    String password;
-    public NumberCharacterMissing(String password) {
-        super(password);
-        this.password = password;
+class NumberCharacterMissingException extends PasswordException {
+    public NumberCharacterMissingException(String message) {
+        super(message);
     }
-        
 }
 
-class Minimum8CharactersRequired extends PasswordException {
-    String password;
-    public Minimum8CharactersRequired(String password) {
-        super(password);
-        this.password = password;
+class Minimum14CharactersRequiredException extends PasswordException {
+    public Minimum14CharactersRequiredException(String message) {
+        super(message);
     }        
 }
 
-class LowerCaseCharacterMissing extends PasswordException {
-    String password;
-    public LowerCaseCharacterMissing(String password) {
-        super(password);
-        this.password = password;
+class LowerCaseCharacterMissingException extends PasswordException {
+    public LowerCaseCharacterMissingException(String message) {
+        super(message);
     }      
+}
+
+class CommonPasswordException extends PasswordException
+{
+    public CommonPasswordException(String message)
+    {
+        super(message);
+    }
 }
