@@ -156,7 +156,7 @@ public class Register extends VerticalLayout{
                     else{
                         registerButton.setText("That Licenseplate Is already Registered");
                     }
-                } catch (IOException | InterruptedException e1) {
+                } catch (IOException | InterruptedException | NoSuchAlgorithmException e1) {
                     e1.printStackTrace();
                 }
             }
@@ -320,7 +320,7 @@ public class Register extends VerticalLayout{
             commonPasswords.add("1234561");
             commonPasswords.add("12344321");
             commonPasswords.add("daniel");
-            commonPasswords.add("000000");
+            commonPasswords.add("hello");
             commonPasswords.add("444444");
             commonPasswords.add("101010");
             commonPasswords.add("qazwsxedc");

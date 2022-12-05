@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/SecurePasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/SecurePasswordHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

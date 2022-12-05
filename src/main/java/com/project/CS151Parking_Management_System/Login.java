@@ -70,7 +70,7 @@ public class Login extends VerticalLayout{
 
                 if(passwordText.equals("Wrong License Plate."))
                     statusText.setText("We don't recognize that license plate.");
-                else if(encrypter.getHashedPassword(password.getValue()).equals(passwordText)){
+                else if(encrypter.passwordsMatch(password.getValue(), passwordText)){
                     statusText.setText("Successful");
                         loginButton.getUI().ifPresent(ui ->
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
@@ -79,7 +79,7 @@ public class Login extends VerticalLayout{
                 else{ 
                     statusText.setText("Wrong");
                 }
-            } catch (IOException e1) {
+            } catch (IOException | NoSuchAlgorithmException e1) {
                 e1.printStackTrace();
             }
         });
