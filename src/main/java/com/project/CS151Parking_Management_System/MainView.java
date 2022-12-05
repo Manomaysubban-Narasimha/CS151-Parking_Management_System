@@ -12,10 +12,20 @@ import com.vaadin.flow.router.Route;
 
 @Route("")
 public class MainView extends VerticalLayout{
+
+    private Div div, div2, div3;
+    private HtmlComponent lineBreak;
+    private Button login, register;
+    private H2 greetings;
+    private H3 amountFull;
+    private PercentageFull occupancyRatio;
+    private Paragraph creds;
+
     public MainView(){
+
         getStyle().set("text-align", "center");
         
-        Div div = new Div();
+        div = new Div();
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
@@ -25,34 +35,32 @@ public class MainView extends VerticalLayout{
         div.getStyle().set("font-family", "futura");
 
 
-        HtmlComponent br = new HtmlComponent("br");
-        HtmlComponent br3 = new HtmlComponent("br");
-        HtmlComponent br4 = new HtmlComponent("br");
+        lineBreak = new HtmlComponent("br");
 
 
-        Button login = new Button("Login");
+        login = new Button("Login");
         login.addClickListener(e ->
             login.getUI().ifPresent(ui ->
                 ui.navigate("login"))
         );
         login.getStyle().set("margin-left", "14em");
-		Button register = new Button("Register");
+		register = new Button("Register");
         register.addClickListener(e ->
             register.getUI().ifPresent(ui ->
                 ui.navigate("register"))
         );
-        H2 p = new H2();
-        p.getStyle().set("color", "#1D3F6E");
-        p.add("Welcome to 151 Garage");
-        div.add(br3);
-        div.add(br4);
-        div.add(p);
-        div.add(br);
+        greetings = new H2();
+        greetings.getStyle().set("color", "#1D3F6E");
+        greetings.add("Welcome to 151 Garage");
+        div.add(lineBreak);
+        div.add(lineBreak);
+        div.add(greetings);
+        div.add(lineBreak);
         div.add(new HorizontalLayout(login, register));
 		add(div);
 
 
-        Div div2 = new Div();
+        div2 = new Div();
         div2.getStyle().set("background-color", "#AFEEEE");
         div2.getStyle().set("width", "30%");
         div2.getStyle().set("height", "10.75em");
@@ -61,20 +69,19 @@ public class MainView extends VerticalLayout{
         div2.getStyle().set("text-align", "center");
         div2.getStyle().set("font-family", "futura");
 
-        HtmlComponent br2 = new HtmlComponent("br");
-        div2.add(br2);
+        div2.add(lineBreak);
 
-        PercentageFull pFull = new PercentageFull();
-        pFull.checkAndReset();
-        H3 amountFull = new H3();
+        occupancyRatio = new PercentageFull();
+        occupancyRatio.checkAndReset();
+        amountFull = new H3();
         amountFull.getStyle().set("color", "#1D3F6E");
 
-        amountFull.setText("151 is Currently " + (100 - (2 * pFull.getCurrentAmount())) + "% full");
+        amountFull.setText("151 is Currently " + (100 - (2 * occupancyRatio.getCurrentAmount())) + "% full");
         div2.add(amountFull);
         add(div2);
 
 
-        Div div3 = new Div();
+        div3 = new Div();
         div3.getStyle().set("background-color", "#AFEEEE");
         div3.getStyle().set("width", "15%");
         div3.getStyle().set("height", "6.75em");
@@ -82,9 +89,9 @@ public class MainView extends VerticalLayout{
         div3.getStyle().set("border-radius", "10em");
         div3.getStyle().set("font-family", "lato");
 
-        Paragraph creds = new Paragraph("A Group 6 Production");
+        creds = new Paragraph("A Group 6 Production");
         creds.getStyle().set("color", "#1D3F6E");
-        div3.add(br);
+        div3.add(lineBreak);
         div3.add(creds);
         add(div3);
     

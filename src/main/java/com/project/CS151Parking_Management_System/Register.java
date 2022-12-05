@@ -2,6 +2,8 @@ package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.button.Button;
@@ -14,16 +16,49 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
+/**
+ * References:
+ * https://nordpass.com/most-common-passwords-list/
+ * https://www.geeksforgeeks.org/inner-class-java/
+ * 
+ */
 @Route("register")
 public class Register extends VerticalLayout{
+
     private String pwd;
 	private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+    private HtmlComponent lineBreak;
+    private Div div;
+    private TextField licensePlate;
+    private TextField licensePlateConfirm;
+    private Paragraph licenseLabel;
+    private Paragraph licenseLabelConfirm;
+    private Paragraph passwordLabel;
+    private HorizontalLayout licenseLayout;
+    private HorizontalLayout confirmLicenseLayout;
+    private HorizontalLayout vehicleTypeLayout, passwordLayout;
+    private ComboBox vehicleType;
+    private PasswordField password;
+    private PasswordField passwordConfirm;
+    private Paragraph passwordLabelConfirm;
+    private HorizontalLayout passwordConfirmLayout;
+    private Paragraph licenseNotMatch;
+    private Paragraph passwordNotMatch;
+    private HorizontalLayout licenseNotMatchLayout;
+    private HorizontalLayout passwordNotMatchLayout;
+    private Paragraph passReqsNeeded;
+    private HorizontalLayout passwordReqsDisplay;
+    private Button registerButton;
+    private boolean passwordChecked;
+    private boolean licenseChecked;
+    private boolean requirement;
+
     public Register() {
         
-        HtmlComponent br = new HtmlComponent("br");
+        lineBreak = new HtmlComponent("br");
 
         getStyle().set("text-align", "center");
-        Div div = new Div();
+        div = new Div();
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
         div.getStyle().set("width", "50%");
@@ -31,154 +66,73 @@ public class Register extends VerticalLayout{
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
         
-        div.add(br);
-        TextField licensePlate = new TextField();
-        Paragraph licenseLabel = new Paragraph("License Plate #");
-        HorizontalLayout l4 = new HorizontalLayout(licenseLabel, licensePlate);
-        l4.setAlignItems(Alignment.CENTER);
-        l4.getStyle().set("margin-left", "9em");
-        div.add(l4);
-
-        TextField licensePlateConfirm = new TextField();
-        Paragraph licenseLabelConfirm = new Paragraph("Confirm Plate #");
-        HorizontalLayout l3 = new HorizontalLayout(licenseLabelConfirm, licensePlateConfirm);
-        l3.setAlignItems(Alignment.CENTER);
-        l3.getStyle().set("margin-left", "9em");
-        div.add(l3);
-
-        ComboBox vehicleType = new ComboBox("Select your vehicle type: ");
-        vehicleType.setItems("Motorcycle","Truck", "SUV", "Electric", "Sedan", "Compact");
-        HorizontalLayout l5 = new HorizontalLayout(vehicleType);
-        l5.setAlignItems(Alignment.CENTER);
-        l5.getStyle().set("margin-left", "9em");
-        div.add(l5);     
-
-        PasswordField password = new PasswordField();
-
-        Paragraph passwordLabel = new Paragraph("Enter a Password");
-        HorizontalLayout l2 = new HorizontalLayout(password, passwordLabel);
-        l2.setAlignItems(Alignment.CENTER);
-        l2.getStyle().set("margin-left", "9em");
-        div.add(l2);
-
-        PasswordField passwordConfirm = new PasswordField();
-        Paragraph passwordLabelConfirm = new Paragraph("Confirm Password");
-        HorizontalLayout l = new HorizontalLayout(passwordConfirm, passwordLabelConfirm);
-        l.setAlignItems(Alignment.CENTER);
-        l.getStyle().set("margin-left", "9em");
-        div.add(l);
-
-        Paragraph licenseNotMatch = new Paragraph("License Numbers Don't Match");
-        Paragraph passwordNotMatch = new Paragraph("Passwords Don't Match");
-        HorizontalLayout l6 = new HorizontalLayout(licenseNotMatch);
-        l6.setAlignItems(Alignment.CENTER);
-        HorizontalLayout l7 = new HorizontalLayout(passwordNotMatch);
-        l7.setAlignItems(Alignment.CENTER);
-
-        Paragraph PassReqsNeeded = new Paragraph();
-        HorizontalLayout l8 = new HorizontalLayout(PassReqsNeeded);
-        l8.setAlignItems(Alignment.CENTER);
-        l8.getStyle().set("margin-left", "9em");
-        l8.getStyle().set("color", "red");
+        div.add(lineBreak);
+        setUpLicenseFields();
+        setUpVehicleSelection();  
+        setUpPasswordFields();
+        setUpNotMatch();
+        setUpPasswordCheck();
 
 
-        Button registerButton = new Button("Register");
+        registerButton = new Button("Register");
         registerButton.addClickListener(e -> {
 
             pwd = new String(password.getValue());
-            boolean passwordChecked = false;
-            boolean licenseChecked = false;
-            boolean requirement = true;
+            requirement = true;
+            afterRegisterClicked();
 
-            if(password.getValue() == "") passwordLabel.getStyle().set("color", "red");
+        
+        });    
+        div.add(registerButton);
+		add(div);
+    }
+
+    private void afterRegisterClicked()
+    {
+        if("".equals(password.getValue())) passwordLabel.getStyle().set("color", "red");
             else passwordLabel.getStyle().set("color", "black");
 
-            if(licensePlate.getValue() == "") licenseLabel.getStyle().set("color", "red");
+            if("".equals(licensePlate.getValue())) licenseLabel.getStyle().set("color", "red");
             else licenseLabel.getStyle().set("color", "black");
 
-            if(licensePlateConfirm.getValue() == "") licenseLabelConfirm.getStyle().set("color", "red");
+            if("".equals(licensePlateConfirm.getValue())) licenseLabelConfirm.getStyle().set("color", "red");
             else licenseLabelConfirm.getStyle().set("color", "black");
 
-            if(passwordConfirm.getValue() == "") passwordLabelConfirm.getStyle().set("color", "red");
+            if("".equals(passwordConfirm.getValue())) passwordLabelConfirm.getStyle().set("color", "red");
             else passwordLabelConfirm.getStyle().set("color", "black");
             
-            if(!password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
+            if(!password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
                 passwordLabel.getStyle().set("color", "red");
                 passwordLabelConfirm.getStyle().set("color", "red");
-                l7.setAlignItems(Alignment.CENTER);
-                l7.getStyle().set("color", "red");
-                l7.getStyle().set("margin-left", "9em");
-                div.add(l7);
+                passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
+                passwordNotMatchLayout.getStyle().set("color", "red");
+                passwordNotMatchLayout.getStyle().set("margin-left", "9em");
+                div.add(passwordNotMatchLayout);
             }
-            if(password.getValue().equals(passwordConfirm.getValue()) && password.getValue() != "" && passwordConfirm.getValue() != ""){
+            if(password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
                 passwordLabel.getStyle().set("color", "#065535");
                 passwordLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(l7);
+                div.remove(passwordNotMatchLayout);
                 passwordChecked = true;
             }
 
 
-            if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
+            if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
                 licenseLabel.getStyle().set("color", "red");
                 licenseLabelConfirm.getStyle().set("color", "red");
-                l6.getStyle().set("color", "red");
-                l6.setAlignItems(Alignment.CENTER);
-                l6.getStyle().set("margin-left", "9em");
-                div.add(l6);
+                licenseNotMatchLayout.getStyle().set("color", "red");
+                licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
+                licenseNotMatchLayout.getStyle().set("margin-left", "9em");
+                div.add(licenseNotMatchLayout);
             }
-            if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && licensePlate.getValue() != "" && licensePlateConfirm.getValue() != ""){
+            if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
                 licenseLabel.getStyle().set("color", "#065535");
                 licenseLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(l6);
+                div.remove(licenseNotMatchLayout);
                 
-                try {
-                    minCheck();
-                    if(minCheck()) {
-                        div.remove(l8);
-                    }
-                }     
-                catch (Minimum8CharactersRequired e1) {
-                    requirement = false;
-                    PassReqsNeeded.setText("Password needs at least 8 Characters");
-                    div.add(l8);
-                }
+                requirement = true;
+                new PasswordChecker().checkPassword();
 
-                try {
-                    numCheck();
-                }
-                catch (NumberCharacterMissing e1) {
-                    requirement = false;
-                    PassReqsNeeded.setText("Password needs a number");
-                    div.add(l8);
-                }
-
-                try {
-                    specialCheck();
-                }
-                catch (SpecialCharacterMissing e1) {
-                    requirement = false;
-                    PassReqsNeeded.setText("Password needs a special character");
-                    div.add(l8);
-                }
-
-                try {
-                    uppercaseCheck();
-                } 
-                catch (UpperCaseCharacterMissing e1) {
-                    requirement = false;
-                    PassReqsNeeded.setText("Password needs an Uppercase Character");
-                    div.add(l8);
-                }
-               
-                try {
-                    lowercaseCheck();
-                } 
-                catch (LowerCaseCharacterMissing e1) {
-                    requirement = false;
-                    PassReqsNeeded.setText("Password needs a Lowercase Character");
-                    div.add(l8);
-                }
-                
                 licenseChecked = true;
             } 
 
@@ -190,8 +144,9 @@ public class Register extends VerticalLayout{
                         influx.createDB("keys");
                         influx.createDB("vehicleType");
 
+                        SecurePasswordHasher encrypter = new SecurePasswordHasher();
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())), "mydb");
+                        influx.postData(licensePlate.getValue(), encrypter.getHashedPassword(password.getValue()), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->
@@ -205,58 +160,311 @@ public class Register extends VerticalLayout{
                     e1.printStackTrace();
                 }
             }
-        
-        });    
-        div.add(registerButton);
-		add(div);
+    }
+
+    private void setUpPasswordCheck()
+    {
+        passReqsNeeded = new Paragraph();
+        passwordReqsDisplay = new HorizontalLayout(passReqsNeeded);
+        passwordReqsDisplay.setAlignItems(Alignment.CENTER);
+        passwordReqsDisplay.getStyle().set("margin-left", "9em");
+        passwordReqsDisplay.getStyle().set("color", "red");
+    }
+
+    private void setUpPasswordFields()
+    {
+        password = new PasswordField();
+
+        passwordLabel = new Paragraph("Enter a Password");
+
+        passwordLayout = new HorizontalLayout(password, passwordLabel);
+        passwordLayout.setAlignItems(Alignment.CENTER);
+        passwordLayout.getStyle().set("margin-left", "9em");
+        div.add(passwordLayout);
+
+        passwordConfirm = new PasswordField();
+        passwordLabelConfirm = new Paragraph("Confirm Password");
+
+        passwordConfirmLayout = new HorizontalLayout(passwordConfirm, passwordLabelConfirm);
+        passwordConfirmLayout.setAlignItems(Alignment.CENTER);
+        passwordConfirmLayout.getStyle().set("margin-left", "9em");
+        div.add(passwordConfirmLayout);
+    }
+
+    private void setUpVehicleSelection()
+    {
+        vehicleType = new ComboBox("Select your vehicle type: ");
+        vehicleType.setItems("Motorcycle", "Truck", "SUV", "Electric", "Sedan", "Compact");
+
+        vehicleTypeLayout = new HorizontalLayout(vehicleType);
+        vehicleTypeLayout.setAlignItems(Alignment.CENTER);
+        vehicleTypeLayout.getStyle().set("margin-left", "9em");
+        div.add(vehicleTypeLayout);   
+    }
+
+    private void setUpLicenseFields()
+    {
+        licensePlate = new TextField();
+        licenseLabel = new Paragraph("License Plate #");
+        licenseLayout = new HorizontalLayout(licenseLabel, licensePlate);
+        licenseLayout.setAlignItems(Alignment.CENTER);
+        licenseLayout.getStyle().set("margin-left", "9em");
+        div.add(licenseLayout);
+
+        licensePlateConfirm = new TextField();
+        licenseLabelConfirm = new Paragraph("Confirm Plate #");
+        confirmLicenseLayout = new HorizontalLayout(licenseLabelConfirm, licensePlateConfirm);
+        confirmLicenseLayout.setAlignItems(Alignment.CENTER);
+        confirmLicenseLayout.getStyle().set("margin-left", "9em");
+        div.add(confirmLicenseLayout);
+    }
+
+    private void setUpNotMatch()
+    {
+        licenseNotMatch = new Paragraph("License Numbers Don't Match");
+        passwordNotMatch = new Paragraph("Passwords Don't Match");
+        licenseNotMatchLayout = new HorizontalLayout(licenseNotMatch);
+        licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
+        passwordNotMatchLayout = new HorizontalLayout(passwordNotMatch);
+        passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
     }
 
     //Password Requirement Methods:
-    public boolean uppercaseCheck() throws UpperCaseCharacterMissing {
-        for (int i = 0; i < pwd.length(); i++) {
-            
-            if (Character.isUpperCase(pwd.charAt(i))) {
-                
-                return true;
-            }
+    private class PasswordChecker
+    {
+        private Set<String> commonPasswords;
+
+        public PasswordChecker()
+        {
+            commonPasswords = new HashSet<>();
+            commonPasswords.add("password");
+            commonPasswords.add("123456");
+            commonPasswords.add("123456789");
+            commonPasswords.add("guest");
+            commonPasswords.add("qwerty");
+            commonPasswords.add("12345678");
+            commonPasswords.add("111111");
+            commonPasswords.add("12345");
+            commonPasswords.add("col123456");
+            commonPasswords.add("123123");
+            commonPasswords.add("1234567");
+            commonPasswords.add("1234");
+            commonPasswords.add("1234567890");
+            commonPasswords.add("000000");
+            commonPasswords.add("555555");
+            commonPasswords.add("666666");
+            commonPasswords.add("123321");
+            commonPasswords.add("654321");
+            commonPasswords.add("7777777");
+            commonPasswords.add("123");
+            commonPasswords.add("D1lakiss");
+            commonPasswords.add("777777");
+            commonPasswords.add("110110jp");
+            commonPasswords.add("1111");
+            commonPasswords.add("987654321");
+            commonPasswords.add("121212");
+            commonPasswords.add("Gizli");
+            commonPasswords.add("abc123");
+            commonPasswords.add("112233");
+            commonPasswords.add("azerty");
+            commonPasswords.add("159753");
+            commonPasswords.add("1q2w3e4r");
+            commonPasswords.add("54321");
+            commonPasswords.add("pass@123");
+            commonPasswords.add("222222");
+            commonPasswords.add("qwertyuiop");
+            commonPasswords.add("qwerty123");
+            commonPasswords.add("qazwsx");
+            commonPasswords.add("vip");
+            commonPasswords.add("asdasd");
+            commonPasswords.add("123qwe");
+            commonPasswords.add("123654");
+            commonPasswords.add("iloveyou");
+            commonPasswords.add("a1b2c3");
+            commonPasswords.add("999999");
+            commonPasswords.add("Groupd2013");
+            commonPasswords.add("1q2w3e");
+            commonPasswords.add("usr");
+            commonPasswords.add("Liman1000");
+            commonPasswords.add("1111111");
+            commonPasswords.add("333333");
+            commonPasswords.add("123123123");
+            commonPasswords.add("9136668099");
+            commonPasswords.add("11111111");
+            commonPasswords.add("1qaz2wsx");
+            commonPasswords.add("password1");
+            commonPasswords.add("mar20lt");
+            commonPasswords.add("gfhjkm");
+            commonPasswords.add("159357");
+            commonPasswords.add("abcd1234");
+            commonPasswords.add("131313");
+            commonPasswords.add("789456");
+            commonPasswords.add("luzit2000");
+            commonPasswords.add("aaaaaa");
+            commonPasswords.add("zxcvbnm");
+            commonPasswords.add("asdfghjkl");
+            commonPasswords.add("1234qwer");
+            commonPasswords.add("88888888");
+            commonPasswords.add("dragon");
+            commonPasswords.add("987654");
+            commonPasswords.add("888888");
+            commonPasswords.add("qwe123");
+            commonPasswords.add("football");
+            commonPasswords.add("3601");
+            commonPasswords.add("asdfgh");
+            commonPasswords.add("master");
+            commonPasswords.add("samsung");
+            commonPasswords.add("12345678910");
+            commonPasswords.add("killer");
+            commonPasswords.add("1237895");
+            commonPasswords.add("1234561");
+            commonPasswords.add("12344321");
+            commonPasswords.add("daniel");
+            commonPasswords.add("hello");
+            commonPasswords.add("444444");
+            commonPasswords.add("101010");
+            commonPasswords.add("qazwsxedc");
+            commonPasswords.add("789456123");
+            commonPasswords.add("super123");
+            commonPasswords.add("qwer1234");
+            commonPasswords.add("123456789a");
+            commonPasswords.add("823477aA");
+            commonPasswords.add("147258369");
+            commonPasswords.add("unknown");
+            commonPasswords.add("98765");
+            commonPasswords.add("q1w2e3r4");
+            commonPasswords.add("232323");
+            commonPasswords.add("102030");
+            commonPasswords.add("12341234");
+            commonPasswords.add("147258");
         }
-        throw new UpperCaseCharacterMissing("Missing an uppercase character");        
+        private void checkPassword()
+        {
+            if(!checkCommon()) return;
+            if(!checkMinCharsReq()) return;
+            if(!checkNumExists()) return;
+            if(!checkSpecialCharExists()) return;
+            if(!checkUpperCaseExists()) return;
+            checkLowerCaseExists();
+        }
+
+        private boolean checkCommon() 
+        {
+            try
+            {
+                if(commonPasswords.contains(pwd))
+                    throw new CommonPasswordException("Password is amongst the top 100 commonly used passwords");
+                div.remove(passwordReqsDisplay);
+            }
+            catch(CommonPasswordException commonPasswordWarning)
+            {
+                requirement = false;
+                passReqsNeeded.setText(commonPasswordWarning.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private boolean checkLowerCaseExists()
+        {
+            try {
+                lowercaseCheck();
+            } 
+            catch (LowerCaseCharacterMissingException lowercaseMissing) {
+                requirement = false;
+                passReqsNeeded.setText(lowercaseMissing.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private boolean checkUpperCaseExists()
+        {
+            try {
+                uppercaseCheck();
+            } 
+            catch (UpperCaseCharacterMissingException uppercaseCharMissing) {
+                requirement = false;
+                passReqsNeeded.setText(uppercaseCharMissing.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private boolean checkSpecialCharExists()
+        {
+            try {
+                specialCheck();
+            }
+            catch (SpecialCharacterMissingException specialCharacterMissing) {
+                requirement = false;
+                passReqsNeeded.setText(specialCharacterMissing.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private boolean checkNumExists()
+        {
+            try {
+                numCheck();
+            }
+            catch (NumberCharacterMissingException numberCharacterMissing) {
+                requirement = false;
+                passReqsNeeded.setText(numberCharacterMissing.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private boolean checkMinCharsReq()
+        {
+            try {
+                minCheck();
+                div.remove(passwordReqsDisplay);
+            }     
+            catch (Minimum14CharactersRequiredException minimum14CharsMissing) {
+                requirement = false;
+                passReqsNeeded.setText(minimum14CharsMissing.getMessage());
+                div.add(passwordReqsDisplay);
+            }
+            return requirement;
+        }
+
+        private void uppercaseCheck() throws UpperCaseCharacterMissingException {
+            for (int i = 0; i < pwd.length(); i++)
+                if (Character.isUpperCase(pwd.charAt(i))) 
+                    return;
+            throw new UpperCaseCharacterMissingException("Missing uppercase characters");        
+        }
+    
+        private void lowercaseCheck() throws LowerCaseCharacterMissingException {
+            for (int i = 0; i < pwd.length(); i++)
+                if (Character.isLowerCase(pwd.charAt(i)))
+                    return;
+            throw new LowerCaseCharacterMissingException("Missing lowercase characters");
+        }
+    
+        private void specialCheck() throws SpecialCharacterMissingException {
+            for (int i = 0; i < specials.length(); i++)
+                if (pwd.contains(Character.toString(specials.charAt(i))))
+                    return;
+            throw new SpecialCharacterMissingException("Missing special characters");
+        }
+    
+        private void minCheck() throws Minimum14CharactersRequiredException {
+            final int MIN_CHARS_REQUIRED = 14;
+            if (pwd.length() >= MIN_CHARS_REQUIRED)
+                return;
+            throw new Minimum14CharactersRequiredException("Need to have at least 14 characters");
+        }
+    
+        private void numCheck() throws NumberCharacterMissingException {
+            for (int i = 0; i < pwd.length(); i++)
+                if (Character.isDigit(pwd.charAt(i)))
+                    return;
+            throw new NumberCharacterMissingException("Need to have at least one number");
+        }
     }
-
-    public boolean lowercaseCheck() throws LowerCaseCharacterMissing {
-		for (int i = 0; i < pwd.length(); i++) {
-			if (Character.isLowerCase(pwd.charAt(i))) {
-				return true;
-			}
-		}
-		throw new LowerCaseCharacterMissing("Missing a lowercase character");
-
-	}
-
-	public boolean specialCheck() throws SpecialCharacterMissing {
-		for (int i = 0; i < specials.length(); i++) {
-			if (pwd.contains(Character.toString(specials.charAt(i)))) {
-				return true;
-			}
-		}
-		throw new SpecialCharacterMissing("Missing a special character");
-	}
-
-	public boolean minCheck() throws Minimum8CharactersRequired {
-		if (pwd.length() > 7) {
-			return true;
-		}
-		throw new Minimum8CharactersRequired("Need to have at least 8 characters");
-	}
-
-	public boolean numCheck() throws NumberCharacterMissing {
-		for (int i = 0; i < pwd.length(); i++) {
-			if (Character.isDigit(pwd.charAt(i))) {
-				return true;
-			}
-		}
-		throw new NumberCharacterMissing("Need to have at least one number");
-	}
-
-
+   
 }

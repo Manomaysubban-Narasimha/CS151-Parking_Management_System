@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java">
-      <change beforePath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" afterDir="false" />
-    </list>
+    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

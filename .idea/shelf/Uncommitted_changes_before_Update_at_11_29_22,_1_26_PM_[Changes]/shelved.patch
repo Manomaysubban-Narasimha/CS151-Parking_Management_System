@@ -1,0 +1,399 @@
+Index: node_modules/.vite/deps/_metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"hash\": \"b96aba13\",\n  \"browserHash\": \"6791761c\",\n  \"optimized\": {\n    \"@polymer/iron-list/iron-list.js\": {\n      \"src\": \"../../@polymer/iron-list/iron-list.js\",\n      \"file\": \"@polymer_iron-list_iron-list__js.js\",\n      \"fileHash\": \"eb7af929\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/common-frontend/ConnectionIndicator.js\": {\n      \"src\": \"../../@vaadin/common-frontend/ConnectionIndicator.js\",\n      \"file\": \"@vaadin_common-frontend_ConnectionIndicator__js.js\",\n      \"fileHash\": \"5a794877\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/comboBoxConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/comboBoxConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_comboBoxConnector__js.js\",\n      \"fileHash\": \"b706ecb8\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/confirmDialogConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/confirmDialogConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_confirmDialogConnector__js.js\",\n      \"fileHash\": \"864f6c4f\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/contextMenuConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/contextMenuConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_contextMenuConnector__js.js\",\n      \"fileHash\": \"d5ca746f\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/contextMenuTargetConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/contextMenuTargetConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_contextMenuTargetConnector__js.js\",\n      \"fileHash\": \"a1d733cb\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/datepickerConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/datepickerConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_datepickerConnector__js.js\",\n      \"fileHash\": \"9d93ff83\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/dialogConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/dialogConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_dialogConnector__js.js\",\n      \"fileHash\": \"3c3bf360\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/dndConnector-es6.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/dndConnector-es6.js\",\n      \"file\": \"@vaadin_flow-frontend_dndConnector-es6__js.js\",\n      \"fileHash\": \"b0632145\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/Flow\": {\n      \"src\": \"../../@vaadin/flow-frontend/Flow.js\",\n      \"file\": \"@vaadin_flow-frontend_Flow.js\",\n      \"fileHash\": \"0b6f8bc7\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/flow-component-renderer.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/flow-component-renderer.js\",\n      \"file\": \"@vaadin_flow-frontend_flow-component-renderer__js.js\",\n      \"fileHash\": \"68b9cf72\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/gridConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/gridConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_gridConnector__js.js\",\n      \"fileHash\": \"0eb6cbf5\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/ironListConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/ironListConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_ironListConnector__js.js\",\n      \"fileHash\": \"5f2432db\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/ironListStyles.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/ironListStyles.js\",\n      \"file\": \"@vaadin_flow-frontend_ironListStyles__js.js\",\n      \"fileHash\": \"e7508f59\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/lit-renderer.ts\": {\n      \"src\": \"../../@vaadin/flow-frontend/lit-renderer.ts\",\n      \"file\": \"@vaadin_flow-frontend_lit-renderer__ts.js\",\n      \"fileHash\": \"2cb99760\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/loginOverlayConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/loginOverlayConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_loginOverlayConnector__js.js\",\n      \"fileHash\": \"e9951361\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/lumo-includes.ts\": {\n      \"src\": \"../../@vaadin/flow-frontend/lumo-includes.ts\",\n      \"file\": \"@vaadin_flow-frontend_lumo-includes__ts.js\",\n      \"fileHash\": \"0f40edba\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/menubarConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/menubarConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_menubarConnector__js.js\",\n      \"fileHash\": \"38ff79de\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/messageListConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/messageListConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_messageListConnector__js.js\",\n      \"fileHash\": \"96f7767c\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/notificationConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/notificationConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_notificationConnector__js.js\",\n      \"fileHash\": \"3bed0c48\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/selectConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/selectConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_selectConnector__js.js\",\n      \"fileHash\": \"0a206e1b\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/vaadin-big-decimal-field.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/vaadin-big-decimal-field.js\",\n      \"file\": \"@vaadin_flow-frontend_vaadin-big-decimal-field__js.js\",\n      \"fileHash\": \"83720962\",\n      \"needsInterop\": true\n    },\n    \"@vaadin/flow-frontend/vaadin-dev-tools.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/vaadin-dev-tools.js\",\n      \"file\": \"@vaadin_flow-frontend_vaadin-dev-tools__js.js\",\n      \"fileHash\": \"11a862d3\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js\",\n      \"file\": \"@vaadin_flow-frontend_vaadin-grid-flow-selection-column__js.js\",\n      \"fileHash\": \"083f4482\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/vaadin-time-picker/timepickerConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/vaadin-time-picker/timepickerConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_vaadin-time-picker_timepickerConnector__js.js\",\n      \"fileHash\": \"5e54f615\",\n      \"needsInterop\": false\n    },\n    \"@vaadin/flow-frontend/virtualListConnector.js\": {\n      \"src\": \"../../@vaadin/flow-frontend/virtualListConnector.js\",\n      \"file\": \"@vaadin_flow-frontend_virtualListConnector__js.js\",\n      \"fileHash\": \"ec1a07e4\",\n      \"needsInterop\": false\n    }\n  },\n  \"chunks\": {\n    \"FlowBootstrap-PN7BUG5X\": {\n      \"file\": \"FlowBootstrap-PN7BUG5X.js\"\n    },\n    \"FlowClient-NOY3G5MU\": {\n      \"file\": \"FlowClient-NOY3G5MU.js\"\n    },\n    \"chunk-BZQRRQX3\": {\n      \"file\": \"chunk-BZQRRQX3.js\"\n    },\n    \"chunk-TCT44YIB\": {\n      \"file\": \"chunk-TCT44YIB.js\"\n    },\n    \"chunk-AM6BF66F\": {\n      \"file\": \"chunk-AM6BF66F.js\"\n    },\n    \"chunk-BQOD6VY2\": {\n      \"file\": \"chunk-BQOD6VY2.js\"\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/node_modules/.vite/deps/_metadata.json b/node_modules/.vite/deps/_metadata.json
+--- a/node_modules/.vite/deps/_metadata.json	
++++ b/node_modules/.vite/deps/_metadata.json	
+@@ -1,161 +1,161 @@
+ {
+-  "hash": "b96aba13",
+-  "browserHash": "6791761c",
++  "hash": "478bd0fe",
++  "browserHash": "ae0e08dd",
+   "optimized": {
+     "@polymer/iron-list/iron-list.js": {
+       "src": "../../@polymer/iron-list/iron-list.js",
+       "file": "@polymer_iron-list_iron-list__js.js",
+-      "fileHash": "eb7af929",
++      "fileHash": "1b472898",
+       "needsInterop": false
+     },
+     "@vaadin/common-frontend/ConnectionIndicator.js": {
+       "src": "../../@vaadin/common-frontend/ConnectionIndicator.js",
+       "file": "@vaadin_common-frontend_ConnectionIndicator__js.js",
+-      "fileHash": "5a794877",
++      "fileHash": "cbccea06",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/comboBoxConnector.js": {
+       "src": "../../@vaadin/flow-frontend/comboBoxConnector.js",
+       "file": "@vaadin_flow-frontend_comboBoxConnector__js.js",
+-      "fileHash": "b706ecb8",
++      "fileHash": "31473082",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/confirmDialogConnector.js": {
+       "src": "../../@vaadin/flow-frontend/confirmDialogConnector.js",
+       "file": "@vaadin_flow-frontend_confirmDialogConnector__js.js",
+-      "fileHash": "864f6c4f",
++      "fileHash": "4cabbdcd",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/contextMenuConnector.js": {
+       "src": "../../@vaadin/flow-frontend/contextMenuConnector.js",
+       "file": "@vaadin_flow-frontend_contextMenuConnector__js.js",
+-      "fileHash": "d5ca746f",
++      "fileHash": "7dfb4633",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/contextMenuTargetConnector.js": {
+       "src": "../../@vaadin/flow-frontend/contextMenuTargetConnector.js",
+       "file": "@vaadin_flow-frontend_contextMenuTargetConnector__js.js",
+-      "fileHash": "a1d733cb",
++      "fileHash": "1c3cd725",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/datepickerConnector.js": {
+       "src": "../../@vaadin/flow-frontend/datepickerConnector.js",
+       "file": "@vaadin_flow-frontend_datepickerConnector__js.js",
+-      "fileHash": "9d93ff83",
++      "fileHash": "59def6f1",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/dialogConnector.js": {
+       "src": "../../@vaadin/flow-frontend/dialogConnector.js",
+       "file": "@vaadin_flow-frontend_dialogConnector__js.js",
+-      "fileHash": "3c3bf360",
++      "fileHash": "f91060e4",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/dndConnector-es6.js": {
+       "src": "../../@vaadin/flow-frontend/dndConnector-es6.js",
+       "file": "@vaadin_flow-frontend_dndConnector-es6__js.js",
+-      "fileHash": "b0632145",
++      "fileHash": "f6be5dd6",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/Flow": {
+       "src": "../../@vaadin/flow-frontend/Flow.js",
+       "file": "@vaadin_flow-frontend_Flow.js",
+-      "fileHash": "0b6f8bc7",
++      "fileHash": "a333b467",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/flow-component-renderer.js": {
+       "src": "../../@vaadin/flow-frontend/flow-component-renderer.js",
+       "file": "@vaadin_flow-frontend_flow-component-renderer__js.js",
+-      "fileHash": "68b9cf72",
++      "fileHash": "6ab077d0",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/gridConnector.js": {
+       "src": "../../@vaadin/flow-frontend/gridConnector.js",
+       "file": "@vaadin_flow-frontend_gridConnector__js.js",
+-      "fileHash": "0eb6cbf5",
++      "fileHash": "ebafef49",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/ironListConnector.js": {
+       "src": "../../@vaadin/flow-frontend/ironListConnector.js",
+       "file": "@vaadin_flow-frontend_ironListConnector__js.js",
+-      "fileHash": "5f2432db",
++      "fileHash": "e89db701",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/ironListStyles.js": {
+       "src": "../../@vaadin/flow-frontend/ironListStyles.js",
+       "file": "@vaadin_flow-frontend_ironListStyles__js.js",
+-      "fileHash": "e7508f59",
++      "fileHash": "c15c38fb",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/lit-renderer.ts": {
+       "src": "../../@vaadin/flow-frontend/lit-renderer.ts",
+       "file": "@vaadin_flow-frontend_lit-renderer__ts.js",
+-      "fileHash": "2cb99760",
++      "fileHash": "b3c34ff9",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/loginOverlayConnector.js": {
+       "src": "../../@vaadin/flow-frontend/loginOverlayConnector.js",
+       "file": "@vaadin_flow-frontend_loginOverlayConnector__js.js",
+-      "fileHash": "e9951361",
++      "fileHash": "78cb3a64",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/lumo-includes.ts": {
+       "src": "../../@vaadin/flow-frontend/lumo-includes.ts",
+       "file": "@vaadin_flow-frontend_lumo-includes__ts.js",
+-      "fileHash": "0f40edba",
++      "fileHash": "af47b0f6",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/menubarConnector.js": {
+       "src": "../../@vaadin/flow-frontend/menubarConnector.js",
+       "file": "@vaadin_flow-frontend_menubarConnector__js.js",
+-      "fileHash": "38ff79de",
++      "fileHash": "5251b54b",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/messageListConnector.js": {
+       "src": "../../@vaadin/flow-frontend/messageListConnector.js",
+       "file": "@vaadin_flow-frontend_messageListConnector__js.js",
+-      "fileHash": "96f7767c",
++      "fileHash": "a93b629b",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/notificationConnector.js": {
+       "src": "../../@vaadin/flow-frontend/notificationConnector.js",
+       "file": "@vaadin_flow-frontend_notificationConnector__js.js",
+-      "fileHash": "3bed0c48",
++      "fileHash": "6f451c0d",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/selectConnector.js": {
+       "src": "../../@vaadin/flow-frontend/selectConnector.js",
+       "file": "@vaadin_flow-frontend_selectConnector__js.js",
+-      "fileHash": "0a206e1b",
++      "fileHash": "7bf72096",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/vaadin-big-decimal-field.js": {
+       "src": "../../@vaadin/flow-frontend/vaadin-big-decimal-field.js",
+       "file": "@vaadin_flow-frontend_vaadin-big-decimal-field__js.js",
+-      "fileHash": "83720962",
++      "fileHash": "bcba4044",
+       "needsInterop": true
+     },
+     "@vaadin/flow-frontend/vaadin-dev-tools.js": {
+       "src": "../../@vaadin/flow-frontend/vaadin-dev-tools.js",
+       "file": "@vaadin_flow-frontend_vaadin-dev-tools__js.js",
+-      "fileHash": "11a862d3",
++      "fileHash": "829a666c",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js": {
+       "src": "../../@vaadin/flow-frontend/vaadin-grid-flow-selection-column.js",
+       "file": "@vaadin_flow-frontend_vaadin-grid-flow-selection-column__js.js",
+-      "fileHash": "083f4482",
++      "fileHash": "53003bee",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/vaadin-time-picker/timepickerConnector.js": {
+       "src": "../../@vaadin/flow-frontend/vaadin-time-picker/timepickerConnector.js",
+       "file": "@vaadin_flow-frontend_vaadin-time-picker_timepickerConnector__js.js",
+-      "fileHash": "5e54f615",
++      "fileHash": "686c0296",
+       "needsInterop": false
+     },
+     "@vaadin/flow-frontend/virtualListConnector.js": {
+       "src": "../../@vaadin/flow-frontend/virtualListConnector.js",
+       "file": "@vaadin_flow-frontend_virtualListConnector__js.js",
+-      "fileHash": "ec1a07e4",
++      "fileHash": "614996d6",
+       "needsInterop": false
+     }
+   },
+Index: node_modules/.vaadin/vaadin.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"vaadinVersion\": \"23.2.9\",\n  \"hash\": \"bd53af3007823aee76391244da401f1e4863cd3bae3154ae175b7dd3e929d441\"\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/node_modules/.vaadin/vaadin.json b/node_modules/.vaadin/vaadin.json
+--- a/node_modules/.vaadin/vaadin.json	
++++ b/node_modules/.vaadin/vaadin.json	
+@@ -1,4 +1,4 @@
+ {
+   "vaadinVersion": "23.2.9",
+-  "hash": "bd53af3007823aee76391244da401f1e4863cd3bae3154ae175b7dd3e929d441"
++  "hash": "cf5a6fddf38637b58772795239642419cc5747f43a8c0b134146670c52700c62"
+ }
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"name\": \"no-name\",\n  \"license\": \"UNLICENSED\",\n  \"dependencies\": {\n    \"@polymer/iron-icon\": \"3.0.1\",\n    \"@polymer/iron-iconset-svg\": \"3.0.1\",\n    \"@polymer/iron-list\": \"3.1.0\",\n    \"@polymer/iron-meta\": \"3.0.1\",\n    \"@polymer/iron-resizable-behavior\": \"3.0.1\",\n    \"@polymer/polymer\": \"3.5.1\",\n    \"@vaadin/accordion\": \"23.2.10\",\n    \"@vaadin/app-layout\": \"23.2.10\",\n    \"@vaadin/avatar\": \"23.2.10\",\n    \"@vaadin/avatar-group\": \"23.2.10\",\n    \"@vaadin/bundles\": \"23.2.10\",\n    \"@vaadin/button\": \"23.2.10\",\n    \"@vaadin/checkbox\": \"23.2.10\",\n    \"@vaadin/checkbox-group\": \"23.2.10\",\n    \"@vaadin/combo-box\": \"23.2.10\",\n    \"@vaadin/common-frontend\": \"0.0.17\",\n    \"@vaadin/component-base\": \"23.2.10\",\n    \"@vaadin/confirm-dialog\": \"23.2.10\",\n    \"@vaadin/context-menu\": \"23.2.10\",\n    \"@vaadin/custom-field\": \"23.2.10\",\n    \"@vaadin/date-picker\": \"23.2.10\",\n    \"@vaadin/date-time-picker\": \"23.2.10\",\n    \"@vaadin/details\": \"23.2.10\",\n    \"@vaadin/dialog\": \"23.2.10\",\n    \"@vaadin/email-field\": \"23.2.10\",\n    \"@vaadin/field-base\": \"23.2.10\",\n    \"@vaadin/field-highlighter\": \"23.2.10\",\n    \"@vaadin/flow-frontend\": \"./target/flow-frontend\",\n    \"@vaadin/form-layout\": \"23.2.10\",\n    \"@vaadin/grid\": \"23.2.10\",\n    \"@vaadin/horizontal-layout\": \"23.2.10\",\n    \"@vaadin/icon\": \"23.2.10\",\n    \"@vaadin/icons\": \"23.2.10\",\n    \"@vaadin/input-container\": \"23.2.10\",\n    \"@vaadin/integer-field\": \"23.2.10\",\n    \"@vaadin/item\": \"23.2.10\",\n    \"@vaadin/list-box\": \"23.2.10\",\n    \"@vaadin/lit-renderer\": \"23.2.10\",\n    \"@vaadin/login\": \"23.2.10\",\n    \"@vaadin/menu-bar\": \"23.2.10\",\n    \"@vaadin/message-input\": \"23.2.10\",\n    \"@vaadin/message-list\": \"23.2.10\",\n    \"@vaadin/multi-select-combo-box\": \"23.2.10\",\n    \"@vaadin/notification\": \"23.2.10\",\n    \"@vaadin/number-field\": \"23.2.10\",\n    \"@vaadin/password-field\": \"23.2.10\",\n    \"@vaadin/polymer-legacy-adapter\": \"23.2.10\",\n    \"@vaadin/progress-bar\": \"23.2.10\",\n    \"@vaadin/radio-group\": \"23.2.10\",\n    \"@vaadin/router\": \"1.7.4\",\n    \"@vaadin/scroller\": \"23.2.10\",\n    \"@vaadin/select\": \"23.2.10\",\n    \"@vaadin/split-layout\": \"23.2.10\",\n    \"@vaadin/tabs\": \"23.2.10\",\n    \"@vaadin/text-area\": \"23.2.10\",\n    \"@vaadin/text-field\": \"23.2.10\",\n    \"@vaadin/time-picker\": \"23.2.10\",\n    \"@vaadin/upload\": \"23.2.10\",\n    \"@vaadin/vaadin-accordion\": \"23.2.10\",\n    \"@vaadin/vaadin-app-layout\": \"23.2.10\",\n    \"@vaadin/vaadin-avatar\": \"23.2.10\",\n    \"@vaadin/vaadin-button\": \"23.2.10\",\n    \"@vaadin/vaadin-checkbox\": \"23.2.10\",\n    \"@vaadin/vaadin-combo-box\": \"23.2.10\",\n    \"@vaadin/vaadin-confirm-dialog\": \"23.2.10\",\n    \"@vaadin/vaadin-context-menu\": \"23.2.10\",\n    \"@vaadin/vaadin-custom-field\": \"23.2.10\",\n    \"@vaadin/vaadin-date-picker\": \"23.2.10\",\n    \"@vaadin/vaadin-date-time-picker\": \"23.2.10\",\n    \"@vaadin/vaadin-details\": \"23.2.10\",\n    \"@vaadin/vaadin-development-mode-detector\": \"2.0.5\",\n    \"@vaadin/vaadin-dialog\": \"23.2.10\",\n    \"@vaadin/vaadin-form-layout\": \"23.2.10\",\n    \"@vaadin/vaadin-grid\": \"23.2.10\",\n    \"@vaadin/vaadin-icon\": \"23.2.10\",\n    \"@vaadin/vaadin-icons\": \"23.2.10\",\n    \"@vaadin/vaadin-item\": \"23.2.10\",\n    \"@vaadin/vaadin-list-box\": \"23.2.10\",\n    \"@vaadin/vaadin-list-mixin\": \"23.2.10\",\n    \"@vaadin/vaadin-login\": \"23.2.10\",\n    \"@vaadin/vaadin-lumo-styles\": \"23.2.10\",\n    \"@vaadin/vaadin-material-styles\": \"23.2.10\",\n    \"@vaadin/vaadin-menu-bar\": \"23.2.10\",\n    \"@vaadin/vaadin-messages\": \"23.2.10\",\n    \"@vaadin/vaadin-notification\": \"23.2.10\",\n    \"@vaadin/vaadin-ordered-layout\": \"23.2.10\",\n    \"@vaadin/vaadin-overlay\": \"23.2.10\",\n    \"@vaadin/vaadin-progress-bar\": \"23.2.10\",\n    \"@vaadin/vaadin-radio-button\": \"23.2.10\",\n    \"@vaadin/vaadin-select\": \"23.2.10\",\n    \"@vaadin/vaadin-split-layout\": \"23.2.10\",\n    \"@vaadin/vaadin-tabs\": \"23.2.10\",\n    \"@vaadin/vaadin-template-renderer\": \"23.2.10\",\n    \"@vaadin/vaadin-text-field\": \"23.2.10\",\n    \"@vaadin/vaadin-themable-mixin\": \"23.2.10\",\n    \"@vaadin/vaadin-time-picker\": \"23.2.10\",\n    \"@vaadin/vaadin-upload\": \"23.2.10\",\n    \"@vaadin/vaadin-usage-statistics\": \"2.1.2\",\n    \"@vaadin/vaadin-virtual-list\": \"23.2.10\",\n    \"@vaadin/vertical-layout\": \"23.2.10\",\n    \"@vaadin/virtual-list\": \"23.2.10\",\n    \"construct-style-sheets-polyfill\": \"3.1.0\",\n    \"date-fns\": \"2.29.3\",\n    \"lit\": \"2.3.0\"\n  },\n  \"devDependencies\": {\n    \"@rollup/plugin-replace\": \"3.1.0\",\n    \"@rollup/pluginutils\": \"4.1.0\",\n    \"async\": \"3.2.2\",\n    \"glob\": \"7.2.3\",\n    \"mkdirp\": \"1.0.4\",\n    \"rollup-plugin-brotli\": \"3.1.0\",\n    \"strip-css-comments\": \"5.0.0\",\n    \"transform-ast\": \"2.4.4\",\n    \"typescript\": \"4.7.4\",\n    \"vite\": \"v3.1.0\",\n    \"vite-plugin-checker\": \"0.4.9\",\n    \"workbox-build\": \"6.5.0\",\n    \"workbox-core\": \"6.5.0\",\n    \"workbox-precaching\": \"6.5.0\"\n  },\n  \"vaadin\": {\n    \"dependencies\": {\n      \"@polymer/iron-icon\": \"3.0.1\",\n      \"@polymer/iron-iconset-svg\": \"3.0.1\",\n      \"@polymer/iron-list\": \"3.1.0\",\n      \"@polymer/iron-meta\": \"3.0.1\",\n      \"@polymer/iron-resizable-behavior\": \"3.0.1\",\n      \"@polymer/polymer\": \"3.5.1\",\n      \"@vaadin/accordion\": \"23.2.10\",\n      \"@vaadin/app-layout\": \"23.2.10\",\n      \"@vaadin/avatar\": \"23.2.10\",\n      \"@vaadin/avatar-group\": \"23.2.10\",\n      \"@vaadin/bundles\": \"23.2.10\",\n      \"@vaadin/button\": \"23.2.10\",\n      \"@vaadin/checkbox\": \"23.2.10\",\n      \"@vaadin/checkbox-group\": \"23.2.10\",\n      \"@vaadin/combo-box\": \"23.2.10\",\n      \"@vaadin/common-frontend\": \"0.0.17\",\n      \"@vaadin/component-base\": \"23.2.10\",\n      \"@vaadin/confirm-dialog\": \"23.2.10\",\n      \"@vaadin/context-menu\": \"23.2.10\",\n      \"@vaadin/custom-field\": \"23.2.10\",\n      \"@vaadin/date-picker\": \"23.2.10\",\n      \"@vaadin/date-time-picker\": \"23.2.10\",\n      \"@vaadin/details\": \"23.2.10\",\n      \"@vaadin/dialog\": \"23.2.10\",\n      \"@vaadin/email-field\": \"23.2.10\",\n      \"@vaadin/field-base\": \"23.2.10\",\n      \"@vaadin/field-highlighter\": \"23.2.10\",\n      \"@vaadin/form-layout\": \"23.2.10\",\n      \"@vaadin/grid\": \"23.2.10\",\n      \"@vaadin/horizontal-layout\": \"23.2.10\",\n      \"@vaadin/icon\": \"23.2.10\",\n      \"@vaadin/icons\": \"23.2.10\",\n      \"@vaadin/input-container\": \"23.2.10\",\n      \"@vaadin/integer-field\": \"23.2.10\",\n      \"@vaadin/item\": \"23.2.10\",\n      \"@vaadin/list-box\": \"23.2.10\",\n      \"@vaadin/lit-renderer\": \"23.2.10\",\n      \"@vaadin/login\": \"23.2.10\",\n      \"@vaadin/menu-bar\": \"23.2.10\",\n      \"@vaadin/message-input\": \"23.2.10\",\n      \"@vaadin/message-list\": \"23.2.10\",\n      \"@vaadin/multi-select-combo-box\": \"23.2.10\",\n      \"@vaadin/notification\": \"23.2.10\",\n      \"@vaadin/number-field\": \"23.2.10\",\n      \"@vaadin/password-field\": \"23.2.10\",\n      \"@vaadin/polymer-legacy-adapter\": \"23.2.10\",\n      \"@vaadin/progress-bar\": \"23.2.10\",\n      \"@vaadin/radio-group\": \"23.2.10\",\n      \"@vaadin/router\": \"1.7.4\",\n      \"@vaadin/scroller\": \"23.2.10\",\n      \"@vaadin/select\": \"23.2.10\",\n      \"@vaadin/split-layout\": \"23.2.10\",\n      \"@vaadin/tabs\": \"23.2.10\",\n      \"@vaadin/text-area\": \"23.2.10\",\n      \"@vaadin/text-field\": \"23.2.10\",\n      \"@vaadin/time-picker\": \"23.2.10\",\n      \"@vaadin/upload\": \"23.2.10\",\n      \"@vaadin/vaadin-accordion\": \"23.2.10\",\n      \"@vaadin/vaadin-app-layout\": \"23.2.10\",\n      \"@vaadin/vaadin-avatar\": \"23.2.10\",\n      \"@vaadin/vaadin-button\": \"23.2.10\",\n      \"@vaadin/vaadin-checkbox\": \"23.2.10\",\n      \"@vaadin/vaadin-combo-box\": \"23.2.10\",\n      \"@vaadin/vaadin-confirm-dialog\": \"23.2.10\",\n      \"@vaadin/vaadin-context-menu\": \"23.2.10\",\n      \"@vaadin/vaadin-custom-field\": \"23.2.10\",\n      \"@vaadin/vaadin-date-picker\": \"23.2.10\",\n      \"@vaadin/vaadin-date-time-picker\": \"23.2.10\",\n      \"@vaadin/vaadin-details\": \"23.2.10\",\n      \"@vaadin/vaadin-development-mode-detector\": \"2.0.5\",\n      \"@vaadin/vaadin-dialog\": \"23.2.10\",\n      \"@vaadin/vaadin-form-layout\": \"23.2.10\",\n      \"@vaadin/vaadin-grid\": \"23.2.10\",\n      \"@vaadin/vaadin-icon\": \"23.2.10\",\n      \"@vaadin/vaadin-icons\": \"23.2.10\",\n      \"@vaadin/vaadin-item\": \"23.2.10\",\n      \"@vaadin/vaadin-list-box\": \"23.2.10\",\n      \"@vaadin/vaadin-list-mixin\": \"23.2.10\",\n      \"@vaadin/vaadin-login\": \"23.2.10\",\n      \"@vaadin/vaadin-lumo-styles\": \"23.2.10\",\n      \"@vaadin/vaadin-material-styles\": \"23.2.10\",\n      \"@vaadin/vaadin-menu-bar\": \"23.2.10\",\n      \"@vaadin/vaadin-messages\": \"23.2.10\",\n      \"@vaadin/vaadin-notification\": \"23.2.10\",\n      \"@vaadin/vaadin-ordered-layout\": \"23.2.10\",\n      \"@vaadin/vaadin-overlay\": \"23.2.10\",\n      \"@vaadin/vaadin-progress-bar\": \"23.2.10\",\n      \"@vaadin/vaadin-radio-button\": \"23.2.10\",\n      \"@vaadin/vaadin-select\": \"23.2.10\",\n      \"@vaadin/vaadin-split-layout\": \"23.2.10\",\n      \"@vaadin/vaadin-tabs\": \"23.2.10\",\n      \"@vaadin/vaadin-template-renderer\": \"23.2.10\",\n      \"@vaadin/vaadin-text-field\": \"23.2.10\",\n      \"@vaadin/vaadin-themable-mixin\": \"23.2.10\",\n      \"@vaadin/vaadin-time-picker\": \"23.2.10\",\n      \"@vaadin/vaadin-upload\": \"23.2.10\",\n      \"@vaadin/vaadin-usage-statistics\": \"2.1.2\",\n      \"@vaadin/vaadin-virtual-list\": \"23.2.10\",\n      \"@vaadin/vertical-layout\": \"23.2.10\",\n      \"@vaadin/virtual-list\": \"23.2.10\",\n      \"construct-style-sheets-polyfill\": \"3.1.0\",\n      \"date-fns\": \"2.29.3\",\n      \"lit\": \"2.3.0\"\n    },\n    \"devDependencies\": {\n      \"@rollup/plugin-replace\": \"3.1.0\",\n      \"@rollup/pluginutils\": \"4.1.0\",\n      \"async\": \"3.2.2\",\n      \"glob\": \"7.2.3\",\n      \"mkdirp\": \"1.0.4\",\n      \"rollup-plugin-brotli\": \"3.1.0\",\n      \"strip-css-comments\": \"5.0.0\",\n      \"transform-ast\": \"2.4.4\",\n      \"typescript\": \"4.7.4\",\n      \"vite\": \"v3.1.0\",\n      \"vite-plugin-checker\": \"0.4.9\",\n      \"workbox-build\": \"6.5.0\",\n      \"workbox-core\": \"6.5.0\",\n      \"workbox-precaching\": \"6.5.0\"\n    },\n    \"hash\": \"bd53af3007823aee76391244da401f1e4863cd3bae3154ae175b7dd3e929d441\"\n  },\n  \"overrides\": {\n    \"@vaadin/bundles\": \"$@vaadin/bundles\",\n    \"@vaadin/accordion\": \"$@vaadin/accordion\",\n    \"@vaadin/app-layout\": \"$@vaadin/app-layout\",\n    \"@vaadin/avatar\": \"$@vaadin/avatar\",\n    \"@vaadin/avatar-group\": \"$@vaadin/avatar-group\",\n    \"@vaadin/button\": \"$@vaadin/button\",\n    \"@vaadin/checkbox\": \"$@vaadin/checkbox\",\n    \"@vaadin/checkbox-group\": \"$@vaadin/checkbox-group\",\n    \"@vaadin/combo-box\": \"$@vaadin/combo-box\",\n    \"@vaadin/component-base\": \"$@vaadin/component-base\",\n    \"@vaadin/confirm-dialog\": \"$@vaadin/confirm-dialog\",\n    \"@vaadin/context-menu\": \"$@vaadin/context-menu\",\n    \"@vaadin/custom-field\": \"$@vaadin/custom-field\",\n    \"@vaadin/date-picker\": \"$@vaadin/date-picker\",\n    \"@vaadin/date-time-picker\": \"$@vaadin/date-time-picker\",\n    \"@vaadin/details\": \"$@vaadin/details\",\n    \"@vaadin/dialog\": \"$@vaadin/dialog\",\n    \"@vaadin/email-field\": \"$@vaadin/email-field\",\n    \"@vaadin/field-base\": \"$@vaadin/field-base\",\n    \"@vaadin/field-highlighter\": \"$@vaadin/field-highlighter\",\n    \"@vaadin/form-layout\": \"$@vaadin/form-layout\",\n    \"@vaadin/grid\": \"$@vaadin/grid\",\n    \"@vaadin/horizontal-layout\": \"$@vaadin/horizontal-layout\",\n    \"@vaadin/icon\": \"$@vaadin/icon\",\n    \"@vaadin/icons\": \"$@vaadin/icons\",\n    \"@vaadin/input-container\": \"$@vaadin/input-container\",\n    \"@vaadin/integer-field\": \"$@vaadin/integer-field\",\n    \"@polymer/iron-icon\": \"$@polymer/iron-icon\",\n    \"@polymer/iron-iconset-svg\": \"$@polymer/iron-iconset-svg\",\n    \"@polymer/iron-list\": \"$@polymer/iron-list\",\n    \"@polymer/iron-meta\": \"$@polymer/iron-meta\",\n    \"@polymer/iron-resizable-behavior\": \"$@polymer/iron-resizable-behavior\",\n    \"@vaadin/item\": \"$@vaadin/item\",\n    \"@vaadin/list-box\": \"$@vaadin/list-box\",\n    \"@vaadin/lit-renderer\": \"$@vaadin/lit-renderer\",\n    \"@vaadin/login\": \"$@vaadin/login\",\n    \"@vaadin/menu-bar\": \"$@vaadin/menu-bar\",\n    \"@vaadin/message-input\": \"$@vaadin/message-input\",\n    \"@vaadin/message-list\": \"$@vaadin/message-list\",\n    \"@vaadin/multi-select-combo-box\": \"$@vaadin/multi-select-combo-box\",\n    \"@vaadin/notification\": \"$@vaadin/notification\",\n    \"@vaadin/number-field\": \"$@vaadin/number-field\",\n    \"@vaadin/password-field\": \"$@vaadin/password-field\",\n    \"@vaadin/polymer-legacy-adapter\": \"$@vaadin/polymer-legacy-adapter\",\n    \"@vaadin/progress-bar\": \"$@vaadin/progress-bar\",\n    \"@vaadin/radio-group\": \"$@vaadin/radio-group\",\n    \"@vaadin/scroller\": \"$@vaadin/scroller\",\n    \"@vaadin/select\": \"$@vaadin/select\",\n    \"@vaadin/split-layout\": \"$@vaadin/split-layout\",\n    \"@vaadin/tabs\": \"$@vaadin/tabs\",\n    \"@vaadin/text-area\": \"$@vaadin/text-area\",\n    \"@vaadin/text-field\": \"$@vaadin/text-field\",\n    \"@vaadin/time-picker\": \"$@vaadin/time-picker\",\n    \"@vaadin/upload\": \"$@vaadin/upload\",\n    \"@vaadin/vaadin-accordion\": \"$@vaadin/vaadin-accordion\",\n    \"@vaadin/vaadin-app-layout\": \"$@vaadin/vaadin-app-layout\",\n    \"@vaadin/vaadin-avatar\": \"$@vaadin/vaadin-avatar\",\n    \"@vaadin/vaadin-button\": \"$@vaadin/vaadin-button\",\n    \"@vaadin/vaadin-checkbox\": \"$@vaadin/vaadin-checkbox\",\n    \"@vaadin/vaadin-combo-box\": \"$@vaadin/vaadin-combo-box\",\n    \"@vaadin/vaadin-confirm-dialog\": \"$@vaadin/vaadin-confirm-dialog\",\n    \"@vaadin/vaadin-context-menu\": \"$@vaadin/vaadin-context-menu\",\n    \"@vaadin/vaadin-custom-field\": \"$@vaadin/vaadin-custom-field\",\n    \"@vaadin/vaadin-date-picker\": \"$@vaadin/vaadin-date-picker\",\n    \"@vaadin/vaadin-date-time-picker\": \"$@vaadin/vaadin-date-time-picker\",\n    \"@vaadin/vaadin-details\": \"$@vaadin/vaadin-details\",\n    \"@vaadin/vaadin-development-mode-detector\": \"$@vaadin/vaadin-development-mode-detector\",\n    \"@vaadin/vaadin-dialog\": \"$@vaadin/vaadin-dialog\",\n    \"@vaadin/vaadin-form-layout\": \"$@vaadin/vaadin-form-layout\",\n    \"@vaadin/vaadin-grid\": \"$@vaadin/vaadin-grid\",\n    \"@vaadin/vaadin-icon\": \"$@vaadin/vaadin-icon\",\n    \"@vaadin/vaadin-icons\": \"$@vaadin/vaadin-icons\",\n    \"@vaadin/vaadin-item\": \"$@vaadin/vaadin-item\",\n    \"@vaadin/vaadin-list-box\": \"$@vaadin/vaadin-list-box\",\n    \"@vaadin/vaadin-list-mixin\": \"$@vaadin/vaadin-list-mixin\",\n    \"@vaadin/vaadin-login\": \"$@vaadin/vaadin-login\",\n    \"@vaadin/vaadin-lumo-styles\": \"$@vaadin/vaadin-lumo-styles\",\n    \"@vaadin/vaadin-material-styles\": \"$@vaadin/vaadin-material-styles\",\n    \"@vaadin/vaadin-menu-bar\": \"$@vaadin/vaadin-menu-bar\",\n    \"@vaadin/vaadin-messages\": \"$@vaadin/vaadin-messages\",\n    \"@vaadin/vaadin-notification\": \"$@vaadin/vaadin-notification\",\n    \"@vaadin/vaadin-ordered-layout\": \"$@vaadin/vaadin-ordered-layout\",\n    \"@vaadin/vaadin-overlay\": \"$@vaadin/vaadin-overlay\",\n    \"@vaadin/vaadin-progress-bar\": \"$@vaadin/vaadin-progress-bar\",\n    \"@vaadin/vaadin-radio-button\": \"$@vaadin/vaadin-radio-button\",\n    \"@vaadin/router\": \"$@vaadin/router\",\n    \"@vaadin/vaadin-select\": \"$@vaadin/vaadin-select\",\n    \"@vaadin/vaadin-split-layout\": \"$@vaadin/vaadin-split-layout\",\n    \"@vaadin/vaadin-tabs\": \"$@vaadin/vaadin-tabs\",\n    \"@vaadin/vaadin-template-renderer\": \"$@vaadin/vaadin-template-renderer\",\n    \"@vaadin/vaadin-text-field\": \"$@vaadin/vaadin-text-field\",\n    \"@vaadin/vaadin-themable-mixin\": \"$@vaadin/vaadin-themable-mixin\",\n    \"@vaadin/vaadin-time-picker\": \"$@vaadin/vaadin-time-picker\",\n    \"@vaadin/vaadin-upload\": \"$@vaadin/vaadin-upload\",\n    \"@vaadin/vaadin-usage-statistics\": \"$@vaadin/vaadin-usage-statistics\",\n    \"@vaadin/vaadin-virtual-list\": \"$@vaadin/vaadin-virtual-list\",\n    \"@vaadin/vertical-layout\": \"$@vaadin/vertical-layout\",\n    \"@vaadin/virtual-list\": \"$@vaadin/virtual-list\",\n    \"@vaadin/common-frontend\": \"$@vaadin/common-frontend\",\n    \"construct-style-sheets-polyfill\": \"$construct-style-sheets-polyfill\",\n    \"lit\": \"$lit\",\n    \"@polymer/polymer\": \"$@polymer/polymer\",\n    \"date-fns\": \"$date-fns\"\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -245,7 +245,7 @@
+       "workbox-core": "6.5.0",
+       "workbox-precaching": "6.5.0"
+     },
+-    "hash": "bd53af3007823aee76391244da401f1e4863cd3bae3154ae175b7dd3e929d441"
++    "hash": "cf5a6fddf38637b58772795239642419cc5747f43a8c0b134146670c52700c62"
+   },
+   "overrides": {
+     "@vaadin/bundles": "$@vaadin/bundles",
+Index: src/main/java/com/project/CS151Parking_Management_System/PasswordException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/project/CS151Parking_Management_System/PasswordException.java b/src/main/java/com/project/CS151Parking_Management_System/PasswordException.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/project/CS151Parking_Management_System/PasswordException.java	
+@@ -0,0 +1,9 @@
++package com.project.CS151Parking_Management_System;
++
++public class PasswordException extends Exception
++{
++	public PasswordException(String message)
++	{
++		super(message);
++	}
++}
+Index: src/main/java/com/project/CS151Parking_Management_System/UpperCaseCharacterMissing.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/project/CS151Parking_Management_System/UpperCaseCharacterMissing.java b/src/main/java/com/project/CS151Parking_Management_System/UpperCaseCharacterMissing.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/project/CS151Parking_Management_System/UpperCaseCharacterMissing.java	
+@@ -0,0 +1,9 @@
++package com.project.CS151Parking_Management_System;
++
++public class UpperCaseCharacterMissing extends PasswordException
++{
++	public UpperCaseCharacterMissing()
++	{
++		super("Password must contain at least one uppercase character.\nPlease try again.");
++	}
++}
+Index: src/main/java/com/project/CS151Parking_Management_System/SpecialCharacterMissing.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/project/CS151Parking_Management_System/SpecialCharacterMissing.java b/src/main/java/com/project/CS151Parking_Management_System/SpecialCharacterMissing.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/project/CS151Parking_Management_System/SpecialCharacterMissing.java	
+@@ -0,0 +1,9 @@
++package com.project.CS151Parking_Management_System;
++
++public class SpecialCharacterMissing extends PasswordException
++{
++	public SpecialCharacterMissing()
++	{
++		super("Password must contain at least one special character.\nPlease try again.");
++	}
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"95eecc4c-4b8d-4fb8-829c-be5280362574\" name=\"Changes\" comment=\"Added Register.java\">\n      <change beforePath=\"$PROJECT_DIR$/node_modules/.vaadin/vaadin.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/node_modules/.vaadin/vaadin.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/vaadin-dev-server-settings.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/vaadin-dev-server-settings.json\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2IBjswiCYH0CLdvgXDgTRSp6Lmc\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_directory_selection\" value=\"$PROJECT_DIR$/src/main/java/com/classProject\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"Errors\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Cs151ParkingManagementSystemApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.project.CS151Parking_Management_System.Cs151ParkingManagementSystemApplication\" />\n      <module name=\"CS151-Parking_Management_System\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.project.CS151Parking_Management_System.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"PythonConfigurationType\" factoryName=\"Python\">\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <module name=\"\" />\n      <option name=\"SCRIPT_NAME\" value=\"\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration default=\"true\" type=\"Tox\" factoryName=\"Tox\">\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration default=\"true\" type=\"tests\" factoryName=\"Doctests\">\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <module name=\"\" />\n      <option name=\"SCRIPT_NAME\" value=\"\" />\n      <option name=\"CLASS_NAME\" value=\"\" />\n      <option name=\"METHOD_NAME\" value=\"\" />\n      <option name=\"FOLDER_NAME\" value=\"\" />\n      <option name=\"TEST_TYPE\" value=\"TEST_SCRIPT\" />\n      <option name=\"PATTERN\" value=\"\" />\n      <option name=\"USE_PATTERN\" value=\"false\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Cs151ParkingManagementSystemApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"95eecc4c-4b8d-4fb8-829c-be5280362574\" name=\"Changes\" comment=\"\" />\n      <created>1669662081501</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1669662081501</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Added Register.java\">\n      <created>1669667194262</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1669667194263</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Added Register.java\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added Register.java\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,11 +4,24 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java">
++    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/LowerCaseCharacterMissing.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Minimum8CharactersRequired.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/NumberCharacterMissing.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/PasswordException.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/SpecialCharacterMissing.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/UpperCaseCharacterMissing.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vaadin/vaadin.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/HomePage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/vaadin-dev-server-settings.json" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -142,11 +155,19 @@
+       <option name="project" value="LOCAL" />
+       <updated>1669667194263</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Modified Password Field">
++      <created>1669674037411</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1669674037411</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Added Register.java" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added Register.java" />
++    <MESSAGE value="Modified Password Field" />
++    <option name="LAST_COMMIT_MESSAGE" value="Modified Password Field" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/project/CS151Parking_Management_System/NumberCharacterMissing.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/project/CS151Parking_Management_System/NumberCharacterMissing.java b/src/main/java/com/project/CS151Parking_Management_System/NumberCharacterMissing.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/project/CS151Parking_Management_System/NumberCharacterMissing.java	
+@@ -0,0 +1,9 @@
++package com.project.CS151Parking_Management_System;
++
++public class NumberCharacterMissing extends PasswordException
++{
++	public NumberCharacterMissing()
++	{
++		super("Password must contain at least one number.\nPlease try again.");
++	}
++}
+Index: target/vaadin-dev-server-settings.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"frontendFolder\": \"/Users/sdhomne/git/CS151-Parking_Management_System/./frontend\",\n  \"themeFolder\": \"themes\",\n  \"themeResourceFolder\": \"/Users/sdhomne/git/CS151-Parking_Management_System/target/flow-frontend\",\n  \"staticOutput\": \"/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp/VAADIN/static\",\n  \"generatedFolder\": \"generated\",\n  \"frontendBundleOutput\": \"/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp\",\n  \"addonFrontendFolder\": \"target/flow-frontend/\",\n  \"themeName\": \"\",\n  \"clientServiceWorkerSource\": \"/Users/sdhomne/git/CS151-Parking_Management_System/target/sw.ts\",\n  \"pwaEnabled\": false,\n  \"offlineEnabled\": false,\n  \"offlinePath\": \"'offline.html'\"\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/vaadin-dev-server-settings.json b/target/vaadin-dev-server-settings.json
+--- a/target/vaadin-dev-server-settings.json	
++++ b/target/vaadin-dev-server-settings.json	
+@@ -1,13 +1,13 @@
+ {
+-  "frontendFolder": "/Users/sdhomne/git/CS151-Parking_Management_System/./frontend",
++  "frontendFolder": "/Users/manomay/Dropbox/Mac/Documents/GitHub/CS151-Parking_Management_System/./frontend",
+   "themeFolder": "themes",
+-  "themeResourceFolder": "/Users/sdhomne/git/CS151-Parking_Management_System/target/flow-frontend",
+-  "staticOutput": "/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
++  "themeResourceFolder": "/Users/manomay/Dropbox/Mac/Documents/GitHub/CS151-Parking_Management_System/target/flow-frontend",
++  "staticOutput": "/Users/manomay/Dropbox/Mac/Documents/GitHub/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+   "generatedFolder": "generated",
+-  "frontendBundleOutput": "/Users/sdhomne/git/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp",
++  "frontendBundleOutput": "/Users/manomay/Dropbox/Mac/Documents/GitHub/CS151-Parking_Management_System/target/classes/META-INF/VAADIN/webapp",
+   "addonFrontendFolder": "target/flow-frontend/",
+   "themeName": "",
+-  "clientServiceWorkerSource": "/Users/sdhomne/git/CS151-Parking_Management_System/target/sw.ts",
++  "clientServiceWorkerSource": "/Users/manomay/Dropbox/Mac/Documents/GitHub/CS151-Parking_Management_System/target/sw.ts",
+   "pwaEnabled": false,
+   "offlineEnabled": false,
+   "offlinePath": "'offline.html'"
