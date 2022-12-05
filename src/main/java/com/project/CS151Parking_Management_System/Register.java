@@ -2,9 +2,7 @@ package com.project.CS151Parking_Management_System;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import com.vaadin.flow.component.HtmlComponent;
@@ -146,8 +144,9 @@ public class Register extends VerticalLayout{
                         influx.createDB("keys");
                         influx.createDB("vehicleType");
 
+                        SecurePasswordHasher encrypter = new SecurePasswordHasher();
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())), "mydb");
+                        influx.postData(licensePlate.getValue(), encrypter.getHashedPassword(password.getValue()), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->
@@ -157,7 +156,7 @@ public class Register extends VerticalLayout{
                     else{
                         registerButton.setText("That Licenseplate Is already Registered");
                     }
-                } catch (IOException | InterruptedException | NoSuchAlgorithmException e1) {
+                } catch (IOException | InterruptedException e1) {
                     e1.printStackTrace();
                 }
             }

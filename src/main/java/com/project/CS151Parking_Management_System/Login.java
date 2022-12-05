@@ -66,10 +66,11 @@ public class Login extends VerticalLayout{
 
                 String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());
                 String key = influx.parseData(influx.getData("keys"), licensePlate.getValue());
+                SecurePasswordHasher encrypter = new SecurePasswordHasher();
 
                 if(passwordText.equals("Wrong License Plate."))
                     statusText.setText("We don't recognize that license plate.");
-                else if(SHA3_256.toHexString(SHA3_256.getSHA(password.getValue())).equals(passwordText)){
+                else if(encrypter.getHashedPassword(password.getValue()).equals(passwordText)){
                     statusText.setText("Successful");
                         loginButton.getUI().ifPresent(ui ->
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
@@ -78,7 +79,7 @@ public class Login extends VerticalLayout{
                 else{ 
                     statusText.setText("Wrong");
                 }
-            } catch (IOException | NoSuchAlgorithmException e1) {
+            } catch (IOException e1) {
                 e1.printStackTrace();
             }
         });
