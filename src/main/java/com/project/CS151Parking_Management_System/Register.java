@@ -140,9 +140,6 @@ public class Register extends VerticalLayout{
                 InfluxHandler influx = new InfluxHandler();
                 try {
                     if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){                            
-                        influx.createDB("mydb");
-                        influx.createDB("keys");
-                        influx.createDB("vehicleType");
 
                         SecurePasswordHasher encrypter = new SecurePasswordHasher();
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");

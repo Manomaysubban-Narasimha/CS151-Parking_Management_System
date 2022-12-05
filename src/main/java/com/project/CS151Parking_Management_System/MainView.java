@@ -1,5 +1,7 @@
 package com.project.CS151Parking_Management_System;
 
+import java.io.IOException;
+
 import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
@@ -76,6 +78,16 @@ public class MainView extends VerticalLayout{
         amountFull = new H3();
         amountFull.getStyle().set("color", "#1D3F6E");
 
+        InfluxHandler influx = new InfluxHandler();
+        try {
+            influx.createDB("spotsAvailable");
+            influx.createDB("mydb");
+            influx.createDB("keys");
+            influx.createDB("vehicleType");
+            influx.createDB("garage");
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
         amountFull.setText("151 is Currently " + (100 - (2 * occupancyRatio.getCurrentAmount())) + "% full");
         div2.add(amountFull);
         add(div2);

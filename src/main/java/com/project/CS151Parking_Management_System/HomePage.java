@@ -104,8 +104,21 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         leave.getStyle().set("font-size", "1.5em");
 
 
+        InfluxHandler influx = new InfluxHandler();
+        leave.addClickListener(e -> {
+            int currAmount = pFull.getCurrentAmount();
+            currAmount++;
+            currentAmount.setText(100 - (currAmount * 2) + "% Full");
+            pFull.updateCurrentAmount(currAmount);
+            paidStatus.getStyle().set("color", "red");
+            try {
+                influx.postData(plateString, "00/00-00", "garage");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
+
         pay.addClickListener(e -> {
-            InfluxHandler influx = new InfluxHandler();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
             LocalDateTime now = LocalDateTime.now();  
 
@@ -118,7 +131,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
                     currentAmount.setText(100 - (toUpdate * 2) + "% Full");
                     pFull.updateCurrentAmount(toUpdate);
                     paidStatus.getStyle().set("color", "green");
-                    influx.createDB("garage");
+
                     influx.postData(plateString, dtf.format(now), "garage");
                 }
             } catch (IOException e1) {
