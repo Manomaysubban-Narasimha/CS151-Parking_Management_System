@@ -1,5 +1,6 @@
 # EasyPark: Parking Management System
-## Team 6: Mano Narasimha, Akshit Sharma, Sarthak Dhomne
+## Team Number: 6 
+## Group Members: Mano Narasimha, Akshit Sharma, Sarthak Dhomne
 
 
 ## Presentation Contributions:
@@ -32,8 +33,8 @@
 **Mano Narasimha:**
 - Embedded salt and pepper with SHA3-256 one-way cryptographic hash function in order to slow down brute-force, dictionary, and rainbow table attacks
 - Added Microsoft’s secure password rules 
-- Made the application detect whether the password that the user entered is amongst the top 100 most commonly used passwords in O(1) time complexity, and prompted the user to re-enter the password
-- Made use of loose coupling, abstraction, abstract factory, and data-hiding into the code and made changes to the codebase to reflect Java’s coding conventions. Made the programs more modular to enhance readability and reduce cognitive complexity of code.
+- Made the application detect whether the password that the user entered is amongst the top 100 most commonly used passwords in O(1) time complexity, and - prompted the user to re-enter the password
+- Made use of loose coupling, abstraction, abstract factory, and data-hiding into the code and made changes to the codebase to reflect Java’s coding c- onventions. Made the programs more modular to enhance readability and reduce cognitive complexity of code.
 
 **Sarthak Dhomne:**
 - Created + updated Vaadin front-end components for the MainView page.
@@ -59,6 +60,7 @@
 - Added the logic for the Leave button. 
 - Changed the index.html file to have a universal background color. 
 
+
 ## Diagrams:
 
  [`Class Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/documentation/diagrams/Updated%20UML%20Diagram.drawio%20(1).png?raw=true)
@@ -68,18 +70,6 @@
  [`Use Case Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/main/diagrams/Project%20UML%20Use%20Case%20Diagram%202.pdf) 
  
  [`Timing Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/main/diagrams/UML%20Timing%20Diagram.png) 
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Functionality:
 Our solutions tackles issues that can hinder parking systems, such as payment, secure registration, and parking spaces available. Users must register for an account with their vehicle plate number and a strong password, as well as specify their type of vehicle. Their portal upon logging in allows users to see the % of garage spaces that are occupied, and they are able to directly pay for their parking.
@@ -100,9 +90,10 @@ Monitor influxDB timing logs
 We solved the complications of parking by implementing a user portal for each customer to interface with. The portal shows users the garage’s parking availability, shows user information, gives the payment option, and allows them to specify when they leave. By consilidating this information through user portals, and allowing admins o monitor time-series parking data for the users, parking systems can be simplified. 
 
 ## Steps to Run Code:
-Install Docker
-Have Docker running
-Run the program with the files
+1. Install Docker
+2. Have Docker running
+3. Run the main program: Cs151ParkingManagementSystemApplication.java
+4. Open web browser and type localhost:8080 to run the application 
 
 
 ## Snapshots of Running Program:
@@ -163,15 +154,18 @@ Java’s MessageDigest class has a method called getInstance() which must
 Data-hiding was achieved via private instance variables and public interface 
   (getters and setters were created and used as needed).
 
-**Abstraction, and loose coupling:** 
+**Abstraction, and loose coupling:**
+
 The implementation details of algorithms were hidden to 
 other classes using appropriate private and package-private access modifiers for all instance variables and applicable methods, thus providing loose coupling as the method’s caller need not change their code to call the method, while the underlying algorithm that is backing up the code can be swapped. For example, the call to getHashedPassword() method of the SecuredPasswordHasher class need not change anywhere, but the underlying algorithm that is used by getHashedPassword() can be changed (for instance, from SHA3-256 + salt + pepper to Argon2di). 
 
-**Exception handling and inheritance:** 
+**Exception handling and inheritance:**
+
 Exception handling was used in order to display error 
 messages for the user when the password did not match the requirements. The exception classes made use of inheritance as all of them were checked exceptions that extended the PasswordException class which ultimately extended the Exception super class which extends Object class.
 
-**Threads:** 
+**Threads:**
+
 Thread.sleep(2000); // in Register.java makes the thread stop for 2 seconds each time 
     the license plate number and password are updated in the database
 
