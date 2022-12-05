@@ -59,11 +59,15 @@
 - Added the logic for the Leave button. 
 - Changed the index.html file to have a universal background color. 
 
-## Updated Diagrams:
+## Diagrams:
 
-
-
-
+ [`Class Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/documentation/diagrams/Updated%20UML%20Diagram.drawio%20(1).png?raw=true)
+ 
+ [`State Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/main/diagrams/Project%20UML%20State%20Diagram.pdf) 
+ 
+ [`Use Case Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/main/diagrams/Project%20UML%20Use%20Case%20Diagram%202.pdf) 
+ 
+ [`Timing Diagram`](https://github.com/Manomaysubban-Narasimha/CS151-Parking_Management_System/blob/main/diagrams/UML%20Timing%20Diagram.png) 
 
 
 
@@ -102,54 +106,44 @@ Run the program with the files
 
 
 ## Snapshots of Running Program:
+
 ![1](https://user-images.githubusercontent.com/104649639/205762670-8f5942f0-b88d-4643-85c2-1ba7f266c806.png)
 
 Checks whether the entered password is a common password:
 
 ![2](https://user-images.githubusercontent.com/104649639/205762718-5bc23078-6def-491b-9d5b-7979b326a373.png)
 
-
-
 Password fields do not accept null values:
-![3](https://user-images.githubusercontent.com/104649639/205762745-05974931-178f-40b5-ad11-038c0c77e41d.png)
 
+![3](https://user-images.githubusercontent.com/104649639/205762745-05974931-178f-40b5-ad11-038c0c77e41d.png)
 
 Password must be at least 14 characters long:
 
-
-
 ![4](https://user-images.githubusercontent.com/104649639/205762768-ec2c6cd5-9dbc-48de-8f4f-dc82a0ce7b2b.png)
-
-
 
 Password should have at least one number:
 
+![image4](https://user-images.githubusercontent.com/104649639/205769742-f687af13-6a31-4219-a045-28dde4908318.png)
 
 Password must contain special characters:
 
+![image11](https://user-images.githubusercontent.com/104649639/205769862-1374b5b0-6439-40cd-8148-f5241bc7819e.png)
 
 Password must contain upper case letter(s):
 
+![image3](https://user-images.githubusercontent.com/104649639/205769794-3977fe21-281c-4409-9252-d129f83318af.png)
 
 Password must contain lowercase letter(s):
 
-
-
-
-
-
-
+![image5](https://user-images.githubusercontent.com/104649639/205769669-1f930600-3e6a-4871-be6e-da0498561436.png)
 
 Login page:
 
+![image6](https://user-images.githubusercontent.com/104649639/205769563-3066ad64-d095-4416-a059-dbf426829e4a.png)
+
 After logging in shows user info:
 
-
-
-
-
-
-
+![image9](https://user-images.githubusercontent.com/104649639/205769337-12b97863-8646-4bae-ac17-292f20b8f672.png)
 
 ## OOPs concepts applied:
 
