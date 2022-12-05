@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'cadvisor'
+    static_configs: 
+      - targets: ['quasar_cadvisor:8080']
+  - job_name: 'printer_temp'
+    static_configs:
+      - targets: ['printing_scraper:5000']
+  - job_name: 'octoprint'
+    scrape_interval: 5s
+    metrics_path: '/plugin/prometheus_exporter/metrics'
+    params:
+      apikey: ['048CEC5BDB17400AA63DF072AD3C26CC']
+    static_configs:
+      - targets: ['192.168.69.121:80']
+
+rule_files:
+  - alert_rules.yml
