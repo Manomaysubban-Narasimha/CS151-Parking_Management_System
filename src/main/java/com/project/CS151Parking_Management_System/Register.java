@@ -137,7 +137,7 @@ public class Register extends VerticalLayout{
             } 
 
             if(passwordChecked && licenseChecked && requirement){
-                InfluxHandler influx = new InfluxHandler();
+                InfluxHandler influx = InfluxHandler.getInstance();
                 try {
                     if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){                            
 

@@ -61,7 +61,7 @@ public class Login extends VerticalLayout{
         statusText = new Paragraph("Please Enter Your Information");
         statusText.getStyle().set("color", "#1D3F6E");
         loginButton.addClickListener(e -> {
-            InfluxHandler influx = new InfluxHandler();
+            InfluxHandler influx = InfluxHandler.getInstance();
             try {
 
                 String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());

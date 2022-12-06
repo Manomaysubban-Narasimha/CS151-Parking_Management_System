@@ -78,7 +78,7 @@ public class MainView extends VerticalLayout{
         amountFull = new H3();
         amountFull.getStyle().set("color", "#1D3F6E");
 
-        InfluxHandler influx = new InfluxHandler();
+        InfluxHandler influx = InfluxHandler.getInstance();
         try {
             influx.createDB("spotsAvailable");
             influx.createDB("mydb");

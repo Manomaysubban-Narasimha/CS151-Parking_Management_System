@@ -21,10 +21,20 @@ import com.vaadin.flow.router.Route;
 @Route("homePage/:plateNumber?/:password?")
 public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
-    private String plateString = "";
-    private String passString = "";
-    private H1 currentAmount = new H1("");
-    private PercentageFull pFull = new PercentageFull();
+    private String plateString;
+    private String passString;
+    private H1 currentAmount;
+    private PercentageFull pFull;
+    private InfluxHandler influx;
+
+    public HomePage()
+    {
+        plateString = "";
+        passString = "";
+        currentAmount = new H1("");
+        pFull = new PercentageFull();
+        influx = InfluxHandler.getInstance();
+    }
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
@@ -41,7 +51,7 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         }, 
         () -> {
         });
-        InfluxHandler influx = new InfluxHandler();
+
         try {
             String passwordOfficial = influx.parseData(influx.getData("keys"), plateString);
             
@@ -75,7 +85,6 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
         try {
             H1 plate = new H1("Plate #: " + plateString);
-            InfluxHandler influx = new InfluxHandler();
             String type;
 
             type = influx.parseData(influx.getData("vehicleType"), plateString);
@@ -104,7 +113,6 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         leave.getStyle().set("font-size", "1.5em");
 
 
-        InfluxHandler influx = new InfluxHandler();
         leave.addClickListener(e -> {
             int currAmount = pFull.getCurrentAmount();
             currAmount++;
@@ -153,7 +161,6 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
     }
 
     public boolean isGreen(){
-        InfluxHandler influx = new InfluxHandler();
         try {
             String time = influx.parseData(influx.getData("garage"), plateString);
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  

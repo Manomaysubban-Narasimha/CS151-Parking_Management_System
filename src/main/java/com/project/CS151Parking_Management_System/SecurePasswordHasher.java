@@ -47,6 +47,11 @@ public class SecurePasswordHasher implements Serializable
         return securePasswordHasher;
     }
 
+    SecurePasswordHasher readResolve()
+    {
+        return getInstance();
+    }
+
     String getHashedPassword(String password) throws NoSuchAlgorithmException
     {
 

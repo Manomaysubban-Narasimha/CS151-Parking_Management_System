@@ -5,7 +5,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class PercentageFull {
-    public InfluxHandler influx = new InfluxHandler();
+
+    private InfluxHandler influx;
+
+    public PercentageFull(){
+        influx = InfluxHandler.getInstance();
+    }
 
     public int getCurrentAmount(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
@@ -43,6 +48,4 @@ public class PercentageFull {
             e.printStackTrace();
         }
     }
-
-    public PercentageFull(){}
 }

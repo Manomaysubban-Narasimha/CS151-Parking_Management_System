@@ -3,12 +3,39 @@ package com.project.CS151Parking_Management_System;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
 
-public class InfluxHandler {
+public class InfluxHandler implements Serializable{
+
+	private static volatile InfluxHandler handler;
+
+	private InfluxHandler()
+	{
+		if(handler != null)
+			throw new RuntimeException("Influx handler already instantiated." + 
+			                           " Use getInstance() method to get the single handler.");
+	}
+
+	static InfluxHandler getInstance()
+	{
+		if(handler == null)
+		{
+			synchronized(InfluxHandler.class)
+			{
+				if(handler == null) handler = new InfluxHandler();
+			}
+		}
+		return handler;
+	}
+
+	InfluxHandler readResolve()
+	{
+		return getInstance();
+	}
 
 	public boolean createDB(String dataBaseName) throws IOException{
         URL url = new URL("http://localhost:8086/query");
