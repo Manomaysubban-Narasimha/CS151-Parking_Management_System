@@ -32,7 +32,7 @@
 
 **Mano Narasimha:**
 - Embedded salt and pepper with SHA3-256 one-way cryptographic hash function in order to slow down brute-force, dictionary, and rainbow table attacks
-- Enforced Microsoft’s secure password rules 
+- Enforced most of Microsoft’s secure password rules via custom Checked Exceptions, Exception Handling, and multi-level Inheritance.
 - Made the application detect whether the password that the user entered is amongst the top 100 most commonly used passwords in O(1) time complexity, and prompted the user to re-enter the password
 - Made use of Singleton, loose coupling, abstraction, abstract factory, and data-hiding into the code and made changes to the codebase to reflect Java’s coding conventions. 
 - Made the programs more modular to enhance readability and reduce cognitive complexity of the code.
