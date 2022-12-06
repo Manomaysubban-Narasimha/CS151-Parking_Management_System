@@ -66,7 +66,7 @@ public class Login extends VerticalLayout{
 
                 String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());
                 String key = influx.parseData(influx.getData("keys"), licensePlate.getValue());
-                SecurePasswordHasher encrypter = new SecurePasswordHasher();
+                SecurePasswordHasher encrypter = SecurePasswordHasher.getInstance();
 
                 if(passwordText.equals("Wrong License Plate."))
                     statusText.setText("We don't recognize that license plate.");
