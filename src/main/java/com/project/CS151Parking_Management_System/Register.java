@@ -144,9 +144,9 @@ public class Register extends VerticalLayout{
                         influx.createDB("keys");
                         influx.createDB("vehicleType");
 
-                        SecurePasswordHasher encrypter = new SecurePasswordHasher();
+                        SecurePasswordHasher secureHasher = SecurePasswordHasher.getInstance();
                         influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), encrypter.getHashedPassword(password.getValue()), "mydb");
+                        influx.postData(licensePlate.getValue(), secureHasher.getHashedPassword(password.getValue()), "mydb");
                         influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
                         Thread.sleep(2000);
                         registerButton.getUI().ifPresent(ui ->

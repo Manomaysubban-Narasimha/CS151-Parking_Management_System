@@ -1,5 +1,6 @@
 package com.project.CS151Parking_Management_System;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -15,13 +16,36 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 /**
-* Makes use of the PBKDF2 algorithm. More info here: https://www.baeldung.com/java-password-hashing
-* Makes use of Simple Factory
-*/
-public class SecurePasswordHasher
+ * Securely hashes password using static salt, pepper, and SHA3-256 one-way cryptographic hash function
+ * Implemented using the Singleton design pattern that is thread, reflection, and serialization safe
+ *
+ * Referred: https://medium.com/@kevalpatel2106/how-to-make-the-perfect-singleton-de6b951dfdb0
+ */
+public class SecurePasswordHasher implements Serializable
 {
     private static final String SALT = "}!'&@%#),*&^=+-_\\|~`fclsiyh<";
     static final int NUM_OF_ASCII_CHARS = 128;
+    private static volatile SecurePasswordHasher securePasswordHasher;
+
+    private SecurePasswordHasher()
+    {
+        // Prevent from reflection api
+        if(securePasswordHasher != null)
+            throw new RuntimeException("Must use the getSecurePasswordHasher() method to get a Secure password hasher");
+    }
+
+    public static SecurePasswordHasher getInstance()
+    {
+        if(securePasswordHasher == null)  // if there doesn't exist an object already, create one
+        {
+            synchronized(SecurePasswordHasher.class)
+            {
+                if(securePasswordHasher == null)
+                    securePasswordHasher = new SecurePasswordHasher();
+            }
+        }
+        return securePasswordHasher;
+    }
 
     String getHashedPassword(String password) throws NoSuchAlgorithmException
     {
@@ -32,13 +56,13 @@ public class SecurePasswordHasher
         return toHexString(getSHA(saltedAndPeppered.toString()));
     }
 
-    char getPepper()
+    private char getPepper()
     {
         Random rand = new Random();
         return (char)rand.nextInt(NUM_OF_ASCII_CHARS);
     }
 
-    String getSaltedPassword(String password)
+    private String getSaltedPassword(String password)
     {
         StringBuilder saltedPassword = new StringBuilder();
         saltedPassword.append(SALT.substring(SALT.length()/2));
@@ -50,15 +74,16 @@ public class SecurePasswordHasher
     boolean passwordsMatch(String userPassword, String dbPassword) throws NoSuchAlgorithmException
     {
         StringBuilder compare = new StringBuilder(getSaltedPassword(userPassword));
+        boolean passwordMatch = false;
         // trying to figure out which pepper suits
         for(int i = 0; i < NUM_OF_ASCII_CHARS; i ++)
         {
             compare.append((char)i);
             if(toHexString(getSHA(compare.toString())).equals(dbPassword))
-                return true;
+                passwordMatch = true;
             compare.deleteCharAt(compare.lastIndexOf(((char)i) + ""));
         }
-        return false;
+        return passwordMatch;
     }
 
     private byte[] getSHA(String input) throws NoSuchAlgorithmException
