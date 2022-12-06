@@ -32,9 +32,10 @@
 
 **Mano Narasimha:**
 - Embedded salt and pepper with SHA3-256 one-way cryptographic hash function in order to slow down brute-force, dictionary, and rainbow table attacks
-- Added Microsoft’s secure password rules 
-- Made the application detect whether the password that the user entered is amongst the top 100 most commonly used passwords in O(1) time complexity, and - prompted the user to re-enter the password
-- Made use of loose coupling, abstraction, abstract factory, and data-hiding into the code and made changes to the codebase to reflect Java’s coding c- onventions. Made the programs more modular to enhance readability and reduce cognitive complexity of code.
+- Enforced Microsoft’s secure password rules 
+- Made the application detect whether the password that the user entered is amongst the top 100 most commonly used passwords in O(1) time complexity, and prompted the user to re-enter the password
+- Made use of Singleton, loose coupling, abstraction, abstract factory, and data-hiding into the code and made changes to the codebase to reflect Java’s coding conventions. 
+- Made the programs more modular to enhance readability and reduce cognitive complexity of the code.
 
 **Sarthak Dhomne:**
 - Created + updated Vaadin front-end components for the MainView page.
@@ -138,12 +139,17 @@ After logging in shows user info:
 
 ## OOPs concepts applied:
 
+**Singleton**
+SecurePasswordHasher is a singlteon class since no more than once object is
+required by the entire application. This Singleton implementation is thread,
+reflection, and serialization safe.
+
 **MVC:** 
 
 Since we are using Spring Boot in the backend, we are inherently making use of MVC    
           design pattern
 
-**Abstract factory:** 
+**Abstract Factory:** 
 
 Java’s MessageDigest class has a method called getInstance() which must 
        be overridden by implementing subclasses, so by calling the getInstance()   
