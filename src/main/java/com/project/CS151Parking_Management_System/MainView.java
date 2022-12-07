@@ -26,7 +26,7 @@ public class MainView extends VerticalLayout{
     public MainView(){
 
         getStyle().set("text-align", "center");
-        
+
         div = new Div();
         setHorizontalComponentAlignment(Alignment.CENTER, div);
         div.getStyle().set("background-color", "#AFEEEE");
@@ -42,14 +42,14 @@ public class MainView extends VerticalLayout{
 
         login = new Button("Login");
         login.addClickListener(e ->
-            login.getUI().ifPresent(ui ->
-                ui.navigate("login"))
+                login.getUI().ifPresent(ui ->
+                        ui.navigate("login"))
         );
         login.getStyle().set("margin-left", "14em");
-		register = new Button("Register");
+        register = new Button("Register");
         register.addClickListener(e ->
-            register.getUI().ifPresent(ui ->
-                ui.navigate("register"))
+                register.getUI().ifPresent(ui ->
+                        ui.navigate("register"))
         );
         greetings = new H2();
         greetings.getStyle().set("color", "#1D3F6E");
@@ -59,7 +59,7 @@ public class MainView extends VerticalLayout{
         div.add(greetings);
         div.add(lineBreak);
         div.add(new HorizontalLayout(login, register));
-		add(div);
+        add(div);
 
 
         div2 = new Div();
@@ -78,7 +78,7 @@ public class MainView extends VerticalLayout{
         amountFull = new H3();
         amountFull.getStyle().set("color", "#1D3F6E");
 
-        InfluxHandler influx = new InfluxHandler();
+        InfluxHandler influx = InfluxHandler.getInstance();
         try {
             influx.createDB("spotsAvailable");
             influx.createDB("mydb");
@@ -106,6 +106,6 @@ public class MainView extends VerticalLayout{
         div3.add(lineBreak);
         div3.add(creds);
         add(div3);
-    
+
     }
 }

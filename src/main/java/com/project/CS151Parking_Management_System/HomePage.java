@@ -21,30 +21,40 @@ import com.vaadin.flow.router.Route;
 @Route("homePage/:plateNumber?/:password?")
 public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
-    private String plateString = "";
-    private String passString = "";
-    private H1 currentAmount = new H1("");
-    private PercentageFull pFull = new PercentageFull();
+    private String plateString;
+    private String passString;
+    private H1 currentAmount;
+    private PercentageFull pFull;
+    private InfluxHandler influx;
+
+    public HomePage()
+    {
+        plateString = "";
+        passString = "";
+        currentAmount = new H1("");
+        pFull = new PercentageFull();
+        influx = InfluxHandler.getInstance();
+    }
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         final Optional<String> plateNumber = event.getRouteParameters().get("plateNumber");
         final Optional<String> password = event.getRouteParameters().get("password");
         plateNumber.ifPresentOrElse(id -> {
-            plateString = id;
-        }, 
-        () -> {
-        });
+                    plateString = id;
+                },
+                () -> {
+                });
 
         password.ifPresentOrElse(id -> {
-            passString = id;
-        }, 
-        () -> {
-        });
-        InfluxHandler influx = new InfluxHandler();
+                    passString = id;
+                },
+                () -> {
+                });
+
         try {
             String passwordOfficial = influx.parseData(influx.getData("keys"), plateString);
-            
+
             pFull.checkAndReset();
             if(passString.equals(passwordOfficial)){
                 if(pFull.getCurrentAmount() <= 0){
@@ -75,12 +85,11 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
 
         try {
             H1 plate = new H1("Plate #: " + plateString);
-            InfluxHandler influx = new InfluxHandler();
             String type;
 
             type = influx.parseData(influx.getData("vehicleType"), plateString);
             H1 password = new H1(type);
-    
+
             div.add(new HorizontalLayout(new VerticalLayout(plate, password), currentAmount));
             add(div);
         } catch (IOException e) {
@@ -104,7 +113,6 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         leave.getStyle().set("font-size", "1.5em");
 
 
-        InfluxHandler influx = new InfluxHandler();
         leave.addClickListener(e -> {
             int currAmount = pFull.getCurrentAmount();
             currAmount++;
@@ -119,8 +127,8 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
         });
 
         pay.addClickListener(e -> {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
-            LocalDateTime now = LocalDateTime.now();  
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");
+            LocalDateTime now = LocalDateTime.now();
 
             try {
                 if(!isGreen() && pFull.getCurrentAmount() != 0){
@@ -144,20 +152,19 @@ public class HomePage extends VerticalLayout implements BeforeEnterObserver {
             div.add(new HorizontalLayout(new VerticalLayout(payNeeded, leave), paidStatus));
             add(div);
 
-        } 
+        }
         else {
-            paidStatus.getStyle().set("color", "red"); 
+            paidStatus.getStyle().set("color", "red");
             div.add(new HorizontalLayout(new VerticalLayout(payNeeded, pay), paidStatus));
             add(div);
         }
     }
 
     public boolean isGreen(){
-        InfluxHandler influx = new InfluxHandler();
         try {
             String time = influx.parseData(influx.getData("garage"), plateString);
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");  
-            LocalDateTime now = LocalDateTime.now();  
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH");
+            LocalDateTime now = LocalDateTime.now();
             String influxTime = dtf.format(now);
 
             return influxTime.equals(time);

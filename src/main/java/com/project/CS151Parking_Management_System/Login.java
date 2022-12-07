@@ -26,7 +26,7 @@ public class Login extends VerticalLayout{
     private  HorizontalLayout passwordLayout;
     private Button loginButton;
     private Paragraph statusText;
-    
+
 
     public Login() {
         lineBreak = new HtmlComponent("br");
@@ -39,7 +39,7 @@ public class Login extends VerticalLayout{
         div.getStyle().set("height", "12.75em");
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
-        
+
         div.add(lineBreak);
         licensePlate = new TextField();
         licenseLabel = new Paragraph("License Plate #");
@@ -48,7 +48,7 @@ public class Login extends VerticalLayout{
         licenseLayout.getStyle().set("margin-left", "9em");
         div.add(licenseLayout);
 
-        
+
 
         password = new PasswordField();
         passwordLabel = new Paragraph("Password");
@@ -61,22 +61,22 @@ public class Login extends VerticalLayout{
         statusText = new Paragraph("Please Enter Your Information");
         statusText.getStyle().set("color", "#1D3F6E");
         loginButton.addClickListener(e -> {
-            InfluxHandler influx = new InfluxHandler();
+            InfluxHandler influx = InfluxHandler.getInstance();
             try {
 
                 String passwordText = influx.parseData(influx.getData("mydb"), licensePlate.getValue());
                 String key = influx.parseData(influx.getData("keys"), licensePlate.getValue());
-                SecurePasswordHasher encrypter = SecurePasswordHasher.getInstance();
+                PasswordEncoder encrypter = PasswordEncoder.getInstance();
 
                 if(passwordText.equals("Wrong License Plate."))
                     statusText.setText("We don't recognize that license plate.");
-                else if(encrypter.passwordsMatch(password.getValue(), passwordText)){
+                else if(encrypter.encode(password.getValue()).equals(passwordText)){
                     statusText.setText("Successful");
-                        loginButton.getUI().ifPresent(ui ->
+                    loginButton.getUI().ifPresent(ui ->
                             ui.navigate("homePage/" + licensePlate.getValue() + "/" + key)
-                        );
+                    );
                 }
-                else{ 
+                else{
                     statusText.setText("Wrong");
                 }
             } catch (IOException | NoSuchAlgorithmException e1) {

@@ -20,13 +20,13 @@ import com.vaadin.flow.router.Route;
  * References:
  * https://nordpass.com/most-common-passwords-list/
  * https://www.geeksforgeeks.org/inner-class-java/
- * 
+ *
  */
 @Route("register")
 public class Register extends VerticalLayout{
 
     private String pwd;
-	private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
+    private String specials = " !#$%&'()*+,-./:;<=>?@[]^_`{|}";
     private HtmlComponent lineBreak;
     private Div div;
     private TextField licensePlate;
@@ -54,7 +54,7 @@ public class Register extends VerticalLayout{
     private boolean requirement;
 
     public Register() {
-        
+
         lineBreak = new HtmlComponent("br");
 
         getStyle().set("text-align", "center");
@@ -65,10 +65,10 @@ public class Register extends VerticalLayout{
         div.getStyle().set("height", "25.75em");
         div.getStyle().set("margin", "auto");
         div.getStyle().set("border-radius", "10em");
-        
+
         div.add(lineBreak);
         setUpLicenseFields();
-        setUpVehicleSelection();  
+        setUpVehicleSelection();
         setUpPasswordFields();
         setUpNotMatch();
         setUpPasswordCheck();
@@ -81,82 +81,82 @@ public class Register extends VerticalLayout{
             requirement = true;
             afterRegisterClicked();
 
-        
-        });    
+
+        });
         div.add(registerButton);
-		add(div);
+        add(div);
     }
 
     private void afterRegisterClicked()
     {
         if("".equals(password.getValue())) passwordLabel.getStyle().set("color", "red");
-            else passwordLabel.getStyle().set("color", "black");
+        else passwordLabel.getStyle().set("color", "black");
 
-            if("".equals(licensePlate.getValue())) licenseLabel.getStyle().set("color", "red");
-            else licenseLabel.getStyle().set("color", "black");
+        if("".equals(licensePlate.getValue())) licenseLabel.getStyle().set("color", "red");
+        else licenseLabel.getStyle().set("color", "black");
 
-            if("".equals(licensePlateConfirm.getValue())) licenseLabelConfirm.getStyle().set("color", "red");
-            else licenseLabelConfirm.getStyle().set("color", "black");
+        if("".equals(licensePlateConfirm.getValue())) licenseLabelConfirm.getStyle().set("color", "red");
+        else licenseLabelConfirm.getStyle().set("color", "black");
 
-            if("".equals(passwordConfirm.getValue())) passwordLabelConfirm.getStyle().set("color", "red");
-            else passwordLabelConfirm.getStyle().set("color", "black");
-            
-            if(!password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
-                passwordLabel.getStyle().set("color", "red");
-                passwordLabelConfirm.getStyle().set("color", "red");
-                passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
-                passwordNotMatchLayout.getStyle().set("color", "red");
-                passwordNotMatchLayout.getStyle().set("margin-left", "9em");
-                div.add(passwordNotMatchLayout);
-            }
-            if(password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
-                passwordLabel.getStyle().set("color", "#065535");
-                passwordLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(passwordNotMatchLayout);
-                passwordChecked = true;
-            }
+        if("".equals(passwordConfirm.getValue())) passwordLabelConfirm.getStyle().set("color", "red");
+        else passwordLabelConfirm.getStyle().set("color", "black");
+
+        if(!password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
+            passwordLabel.getStyle().set("color", "red");
+            passwordLabelConfirm.getStyle().set("color", "red");
+            passwordNotMatchLayout.setAlignItems(Alignment.CENTER);
+            passwordNotMatchLayout.getStyle().set("color", "red");
+            passwordNotMatchLayout.getStyle().set("margin-left", "9em");
+            div.add(passwordNotMatchLayout);
+        }
+        if(password.getValue().equals(passwordConfirm.getValue()) && !"".equals(password.getValue()) && !"".equals(passwordConfirm.getValue())){
+            passwordLabel.getStyle().set("color", "#065535");
+            passwordLabelConfirm.getStyle().set("color", "#065535");
+            div.remove(passwordNotMatchLayout);
+            passwordChecked = true;
+        }
 
 
-            if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
-                licenseLabel.getStyle().set("color", "red");
-                licenseLabelConfirm.getStyle().set("color", "red");
-                licenseNotMatchLayout.getStyle().set("color", "red");
-                licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
-                licenseNotMatchLayout.getStyle().set("margin-left", "9em");
-                div.add(licenseNotMatchLayout);
-            }
-            if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
-                licenseLabel.getStyle().set("color", "#065535");
-                licenseLabelConfirm.getStyle().set("color", "#065535");
-                div.remove(licenseNotMatchLayout);
-                
-                requirement = true;
-                new PasswordChecker().checkPassword();
+        if(!licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
+            licenseLabel.getStyle().set("color", "red");
+            licenseLabelConfirm.getStyle().set("color", "red");
+            licenseNotMatchLayout.getStyle().set("color", "red");
+            licenseNotMatchLayout.setAlignItems(Alignment.CENTER);
+            licenseNotMatchLayout.getStyle().set("margin-left", "9em");
+            div.add(licenseNotMatchLayout);
+        }
+        if(licensePlate.getValue().equals(licensePlateConfirm.getValue()) && !"".equals(licensePlate.getValue()) && !"".equals(licensePlateConfirm.getValue())){
+            licenseLabel.getStyle().set("color", "#065535");
+            licenseLabelConfirm.getStyle().set("color", "#065535");
+            div.remove(licenseNotMatchLayout);
 
-                licenseChecked = true;
-            } 
+            requirement = true;
+            new PasswordChecker().checkPassword();
 
-            if(passwordChecked && licenseChecked && requirement){
-                InfluxHandler influx = new InfluxHandler();
-                try {
-                    if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){                            
+            licenseChecked = true;
+        }
 
-                        SecurePasswordHasher encrypter = SecurePasswordHasher.getInstance();
-                        influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
-                        influx.postData(licensePlate.getValue(), encrypter.getHashedPassword(password.getValue()), "mydb");
-                        influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
-                        Thread.sleep(2000);
-                        registerButton.getUI().ifPresent(ui ->
-                                ui.navigate("")
-                        );
-                    }
-                    else{
-                        registerButton.setText("That Licenseplate Is already Registered");
-                    }
-                } catch (IOException | InterruptedException | NoSuchAlgorithmException e1) {
-                    e1.printStackTrace();
+        if(passwordChecked && licenseChecked && requirement){
+            InfluxHandler influx = InfluxHandler.getInstance();
+            try {
+                if(influx.parseData(influx.getData("mydb"), licensePlate.getValue()).equals("Wrong License Plate")){
+
+                    PasswordEncoder encrypter = PasswordEncoder.getInstance();
+                    influx.postData(licensePlate.getValue(), vehicleType.getValue().toString(), "vehicleType");
+                    influx.postData(licensePlate.getValue(), encrypter.encode(password.getValue()), "mydb");
+                    influx.postData(licensePlate.getValue(), influx.getAlphaNumericString(40), "keys");
+                    Thread.sleep(2000);
+                    registerButton.getUI().ifPresent(ui ->
+                            ui.navigate("")
+                    );
                 }
+                else{
+                    registerButton.setText("That Licenseplate Is already Registered");
+                }
+            } catch (IOException | InterruptedException | NoSuchAlgorithmException e1) {
+                e1.printStackTrace();
             }
+        }
     }
 
     private void setUpPasswordCheck()
@@ -196,7 +196,7 @@ public class Register extends VerticalLayout{
         vehicleTypeLayout = new HorizontalLayout(vehicleType);
         vehicleTypeLayout.setAlignItems(Alignment.CENTER);
         vehicleTypeLayout.getStyle().set("margin-left", "9em");
-        div.add(vehicleTypeLayout);   
+        div.add(vehicleTypeLayout);
     }
 
     private void setUpLicenseFields()
@@ -345,7 +345,7 @@ public class Register extends VerticalLayout{
             checkLowerCaseExists();
         }
 
-        private boolean checkCommon() 
+        private boolean checkCommon()
         {
             try
             {
@@ -366,7 +366,7 @@ public class Register extends VerticalLayout{
         {
             try {
                 lowercaseCheck();
-            } 
+            }
             catch (LowerCaseCharacterMissingException lowercaseMissing) {
                 requirement = false;
                 passReqsNeeded.setText(lowercaseMissing.getMessage());
@@ -379,7 +379,7 @@ public class Register extends VerticalLayout{
         {
             try {
                 uppercaseCheck();
-            } 
+            }
             catch (UpperCaseCharacterMissingException uppercaseCharMissing) {
                 requirement = false;
                 passReqsNeeded.setText(uppercaseCharMissing.getMessage());
@@ -419,7 +419,7 @@ public class Register extends VerticalLayout{
             try {
                 minCheck();
                 div.remove(passwordReqsDisplay);
-            }     
+            }
             catch (Minimum14CharactersRequiredException minimum14CharsMissing) {
                 requirement = false;
                 passReqsNeeded.setText(minimum14CharsMissing.getMessage());
@@ -430,32 +430,32 @@ public class Register extends VerticalLayout{
 
         private void uppercaseCheck() throws UpperCaseCharacterMissingException {
             for (int i = 0; i < pwd.length(); i++)
-                if (Character.isUpperCase(pwd.charAt(i))) 
+                if (Character.isUpperCase(pwd.charAt(i)))
                     return;
-            throw new UpperCaseCharacterMissingException("Missing uppercase characters");        
+            throw new UpperCaseCharacterMissingException("Missing uppercase characters");
         }
-    
+
         private void lowercaseCheck() throws LowerCaseCharacterMissingException {
             for (int i = 0; i < pwd.length(); i++)
                 if (Character.isLowerCase(pwd.charAt(i)))
                     return;
             throw new LowerCaseCharacterMissingException("Missing lowercase characters");
         }
-    
+
         private void specialCheck() throws SpecialCharacterMissingException {
             for (int i = 0; i < specials.length(); i++)
                 if (pwd.contains(Character.toString(specials.charAt(i))))
                     return;
             throw new SpecialCharacterMissingException("Missing special characters");
         }
-    
+
         private void minCheck() throws Minimum14CharactersRequiredException {
             final int MIN_CHARS_REQUIRED = 14;
             if (pwd.length() >= MIN_CHARS_REQUIRED)
                 return;
             throw new Minimum14CharactersRequiredException("Need to have at least 14 characters");
         }
-    
+
         private void numCheck() throws NumberCharacterMissingException {
             for (int i = 0; i < pwd.length(); i++)
                 if (Character.isDigit(pwd.charAt(i)))
@@ -463,5 +463,4 @@ public class Register extends VerticalLayout{
             throw new NumberCharacterMissingException("Need to have at least one number");
         }
     }
-   
 }

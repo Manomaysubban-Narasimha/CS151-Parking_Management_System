@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java" />
+    <list default="true" id="95eecc4c-4b8d-4fb8-829c-be5280362574" name="Changes" comment="Added Register.java">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/springframework_boot_spring_starter_security.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22,_4_15_PM_[Changes]/HomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22,_4_15_PM_[Changes]/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22,_4_15_PM_[Changes]/Register.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22,_4_15_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_22__4_15_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_29_22,_2_22_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_29_22__2_22_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS151-Parking_Management_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS151-Parking_Management_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/InfluxHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/InfluxHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/PercentageFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/PercentageFull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/SecurePasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System/PasswordEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/InfluxHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/PercentageFull.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/PercentageFull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register$PasswordChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register$PasswordChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/SecurePasswordHasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/CS151Parking_Management_System/SecurePasswordHasher.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,11 +55,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/classProject" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/project/CS151Parking_Management_System" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
